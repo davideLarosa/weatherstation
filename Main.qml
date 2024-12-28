@@ -84,44 +84,115 @@ Window {
             lineVisible: false
         }
 
-        //Weather from tomorrow
+        // Additions
         Rectangle {
+            id: lower_line
+            height: parent.height/4
             width: parent.width
-            height: 150
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             color: "transparent"
 
             Rectangle {
-                id: horizontalLine
-                height: 1
-                width: parent.width
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
-                border.width: 1
-                border.color: "white"
-            }
-
-            ItemWeather {
-                id: weather1
-                width: parent.width * 0.25
-                height: parent.width
+                id: lower_line_left
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.bottom: parent.bottom
                 anchors.left: parent.left
-                dayOfWeek: qsTr("Monday")
-                lineVisible: false
+                height: parent.height
+                width: parent.width/2
+                color: "transparent"
+
+                ItemWeatherSmall {
+                    id: weather1
+                    width: parent.width
+                    height: parent.height
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    dayOfWeek: qsTr("Monday")
+                    lineVisible: false
+                }
+            }
+            // Rectangle {
+            //     id: lower_line_center
+            //     anchors.verticalCenter: parent.verticalCenter
+            //     anchors.bottom: parent.bottom
+            //     anchors.left: lower_line_left.right
+            //     height: parent.height
+            //     width: parent.width/2
+            //     color: "transparent"
+
+
+            //     ItemWeatherSmall {
+            //         id: weather2
+            //         width: parent.width
+            //         height: parent.height
+            //         anchors.verticalCenter: parent.verticalCenter
+            //         anchors.left: parent.left
+            //         dayOfWeek: qsTr("Monday")
+            //         lineVisible: false
+            //     }
+            // }
+            Rectangle {
+                id: lower_line_right
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.bottom: parent.bottom
+                anchors.left: lower_line_left.right
+                height: parent.height
+                width: parent.width/2
+                color: "transparent"
+
+
+                ItemWeatherSmall {
+                    id: weather2
+                    width: parent.width
+                    height: parent.height
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    dayOfWeek: qsTr("Tuesday")
+                    lineVisible: false
+                }
             }
 
-            ItemWeather {
-                id: weather2
-                width: parent.width * 0.25
-                height: parent.width
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: weather1.right
-                dayOfWeek: qsTr("Tuesday")
-                lineVisible: false
-            }
         }
+
+        // //Weather from tomorrow
+        // Rectangle {
+        //     width: parent.width
+        //     height: 150
+        //     anchors.horizontalCenter: parent.horizontalCenter
+        //     anchors.bottom: parent.bottom
+        //     color: "transparent"
+
+        //     Rectangle {
+        //         id: horizontalLine
+        //         height: 1
+        //         width: parent.width
+        //         anchors.horizontalCenter: parent.horizontalCenter
+        //         anchors.top: parent.top
+        //         border.width: 1
+        //         border.color: "white"
+        //     }
+
+        //     ItemWeather {
+        //         id: weather1
+        //         width: parent.width * 0.25
+        //         height: parent.width
+        //         anchors.verticalCenter: parent.verticalCenter
+        //         anchors.left: parent.left
+        //         dayOfWeek: qsTr("Monday")
+        //         lineVisible: false
+        //     }
+
+        //     ItemWeather {
+        //         id: weather2
+        //         width: parent.width * 0.25
+        //         height: parent.width
+        //         anchors.verticalCenter: parent.verticalCenter
+        //         anchors.left: weather1.right
+        //         dayOfWeek: qsTr("Tuesday")
+        //         lineVisible: false
+        //     }
+        // }
     }
     // the invisible button
     Rectangle {
@@ -142,27 +213,37 @@ Window {
         target: appBridge
         function onDataChanged() {
             //Today
-            //weather0.setIcon(appBridge.JsondData.DailyForecasts[0]);
-            weather0.tempMin = "Min: " + appBridge.JsonData.weather[0].mintempC + " °C";
-            weather0.tempMax = "Max: " + appBridge.JsonData.weather[0].maxtempC + " °C";
+            weather0.tempMin = "Min: " + appBridge.JsonData.weather[0].mintempC;
+            weather0.tempMax = "Max: " + appBridge.JsonData.weather[0].maxtempC;
+            weather0.tempCurr = "Curr: " + appBridge.JsonData.current_condition[0].temp_C + " (" + appBridge.JsonData.current_condition[0].FeelsLikeC + ")";
+            weather0.setIcon(appBridge.JsonData.current_condition[0].weatherCode)
 
             // //Today + 1
-            // var date = new Date(appBridge.JsonData.DailyForecasts[1].EpochDate * 100);
-            weather1.tempMin = "Min: " + appBridge.JsonData.weather[1].mintempC + " °C";
-            weather1.tempMax = "Max: " + appBridge.JsonData.weather[1].maxtempC + " °C";
-            //weather1.dayOfWeek = Qt.formatDateTime(date, "dddd");
-            // weather1.setIcon(appBridge.JsondData.DailiForecast[1].Day.Icon)
-            // weather1.tempMin = appBridge.JsonData.DailyForecasts[1].Temperature.Minimum.Value + " °C";
-            // weather1.tempMax = appBridge.JsonData.DailyForecasts[1].Temperature.Maximum.Value + " °C";
+            var date = new Date(appBridge.JsonData.weather[1].date);
+            weather1.dayOfWeek = Qt.formatDateTime(date, "dddd");
+            weather1.tempMin = "Min: " + appBridge.JsonData.weather[1].mintempC;
+            weather1.tempMax = "Max: " + appBridge.JsonData.weather[1].maxtempC;
+            weather1.tempAvg = "Avg: " + appBridge.JsonData.weather[1].avgtempC;
+            weather1.conditinAtTime = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC + ")"
+            //weather1.tempFeels = "Feels: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC;
+            weather1.rain = "Rain: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].chanceofrain;
+            weather1.humidity = "H: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].humidity;
+            weather1.condition = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].weatherDesc[0].value;
+            weather1.setIcon(appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].weatherCode)
 
             // //Today + 2
-            // var date = new Date(appBridge.JsonData.DailyForecasts[2].EpochDate * 100);
-            weather2.tempMin = "Min: " + appBridge.JsonData.weather[2].mintempC + " °C";
-            weather2.tempMax = "Max: " + appBridge.JsonData.weather[2].maxtempC + " °C";
-            // weather2.dayOfWeek = Qt.formatDateTime(date, "dddd");
-            // weather2.setIcon(appBridge.JsondData.DailiForecast[2].Day.Icon)
-            // weather2.tempMin = appBridge.JsonData.DailyForecasts[2].Temperature.Minimum.Value + " °C";
-            // weather2.tempMax = appBridge.JsonData.DailyForecasts[2].Temperature.Maximum.Value + " °C";
+            var date = new Date(appBridge.JsonData.weather[2].date);
+            weather2.dayOfWeek = Qt.formatDateTime(date, "dddd");
+            weather2.tempMin = "Min: " + appBridge.JsonData.weather[2].mintempC;
+            weather2.tempMax = "Max: " + appBridge.JsonData.weather[2].maxtempC;
+            weather2.tempAvg = "Avg: " + appBridge.JsonData.weather[2].avgtempC;
+            weather2.conditinAtTime = appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].FeelsLikeC + ")"
+            //weather2.tempFeels = "Feels: " + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].FeelsLikeC;
+            weather2.rain = "Rain: " + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].chanceofrain;
+            weather2.humidity = "H: " + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].humidity ;
+            weather2.condition = appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].weatherDesc[0].value;
+            weather2.setIcon(appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].weatherCode)
+
         }
     }
 }

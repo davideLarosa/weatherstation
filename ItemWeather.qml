@@ -2,8 +2,10 @@ import QtQuick 2.0
 
 Rectangle {
     property string dayOfWeek: " "
-    property string tempMin: "--.- °C"
-    property string tempMax: "--.- °C"
+    property string unit: " °C"
+    property string tempCurr: "Curr: --.-"
+    property string tempMin: "Min: --.-"
+    property string tempMax: "Max: --.-"
     property bool lineVisible: true
     property real scaleFactor: 1.0
 
@@ -27,7 +29,7 @@ Rectangle {
     Image {
         id: imgWeather
         anchors.centerIn: parent
-        source: "qrc:/images/01-s.png"
+        source: "qrc:/images/113.png"
         scale: scaleFactor
     }
 
@@ -49,7 +51,7 @@ Rectangle {
             font.bold: true
             font.pointSize: 13
             font.family: fontOpenSans.name
-            text: tempMin
+            text: tempMin + unit
         }
         Text {
             id: txtTempMax
@@ -60,7 +62,18 @@ Rectangle {
             font.bold: true
             font.pointSize: 13
             font.family: fontOpenSans.name
-            text: tempMax
+            text: tempMax + unit
+        }
+        Text {
+            id: txtTempCurr
+            anchors.left: txtTempMax.right
+            anchors.leftMargin: 15
+            anchors.verticalCenter: parent.verticalCenter
+            color: "#ffffff"
+            font.bold: true
+            font.pointSize: 13
+            font.family: fontOpenSans.name
+            text: tempCurr + unit
         }
     }
 

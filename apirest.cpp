@@ -32,3 +32,4 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
 
   //  qDebug() << QLatin1String(docByteArray);
 }
+

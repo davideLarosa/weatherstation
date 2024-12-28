@@ -1,46 +1,82 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/01-s.png</file>
-        <file>images/02-s.png</file>
+        <file>fonts/Helvetica-Black-SemiBold.ttf</file>
+        <file>fonts/OpenSans-Light.ttf</file>
         <file>images/03-s.png</file>
         <file>images/04-s.png</file>
         <file>images/05-s.png</file>
-        <file>images/06-s.png</file>
-        <file>images/07-s.png</file>
         <file>images/08-s.png</file>
-        <file>images/11-s.png</file>
+        <file>images/113.png</file>
+        <file>images/116.png</file>
+        <file>images/119.png</file>
         <file>images/12-s.png</file>
+        <file>images/122.png</file>
         <file>images/13-s.png</file>
         <file>images/14-s.png</file>
-        <file>images/15-s.png</file>
-        <file>images/16-s.png</file>
+        <file>images/143.png</file>
         <file>images/17-s.png</file>
-        <file>images/18-s.png</file>
+        <file>images/176.png</file>
+        <file>images/179.png</file>
+        <file>images/182.png</file>
+        <file>images/185.png</file>
         <file>images/19-s.png</file>
         <file>images/20-s.png</file>
+        <file>images/200.png</file>
         <file>images/21-s.png</file>
-        <file>images/22-s.png</file>
+        <file>images/227.png</file>
         <file>images/23-s.png</file>
+        <file>images/230.png</file>
         <file>images/24-s.png</file>
-        <file>images/25-s.png</file>
+        <file>images/248.png</file>
         <file>images/26-s.png</file>
-        <file>images/29-s.png</file>
+        <file>images/260.png</file>
+        <file>images/263.png</file>
+        <file>images/266.png</file>
+        <file>images/281.png</file>
+        <file>images/284.png</file>
+        <file>images/293.png</file>
+        <file>images/296.png</file>
+        <file>images/299.png</file>
         <file>images/30-s.png</file>
+        <file>images/302.png</file>
+        <file>images/305.png</file>
+        <file>images/308.png</file>
         <file>images/31-s.png</file>
+        <file>images/311.png</file>
+        <file>images/314.png</file>
+        <file>images/317.png</file>
         <file>images/32-s.png</file>
+        <file>images/320.png</file>
+        <file>images/323.png</file>
+        <file>images/326.png</file>
+        <file>images/329.png</file>
         <file>images/33-s.png</file>
+        <file>images/332.png</file>
+        <file>images/335.png</file>
+        <file>images/338.png</file>
         <file>images/34-s.png</file>
         <file>images/35-s.png</file>
+        <file>images/350.png</file>
+        <file>images/353.png</file>
+        <file>images/356.png</file>
+        <file>images/359.png</file>
         <file>images/36-s.png</file>
+        <file>images/362.png</file>
+        <file>images/365.png</file>
+        <file>images/368.png</file>
         <file>images/37-s.png</file>
+        <file>images/371.png</file>
+        <file>images/374.png</file>
+        <file>images/377.png</file>
         <file>images/38-s.png</file>
+        <file>images/386.png</file>
+        <file>images/389.png</file>
         <file>images/39-s.png</file>
-        <file>images/40-s.png</file>
+        <file>images/392.png</file>
+        <file>images/395.png</file>
         <file>images/41-s.png</file>
         <file>images/42-s.png</file>
         <file>images/43-s.png</file>
         <file>images/44-s.png</file>
-        <file>fonts/Helvetica-Black-SemiBold.ttf</file>
-        <file>fonts/OpenSans-Light.ttf</file>
     </qresource>
 </RCC>
