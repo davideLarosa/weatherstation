@@ -2,8 +2,8 @@ import QtQuick
 
 Window {
     id: mainWindow
-    width: 800
-    height: 480
+    width: 1024
+    height: 600
     visible: true
     visibility: Window.FullScreen
     title: qsTr("Raspi Weather")
@@ -117,7 +117,7 @@ Window {
     Rectangle {
         id: rectAdditionaWeather
         width: parent.width
-        height: 100
+        height: 220
         anchors.top: rectWeather0.bottom
         color: "blue"
 
