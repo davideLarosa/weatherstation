@@ -37,29 +37,6 @@ Window {
         anchors.top: parent.top
         color: "#233343"
 
-
-        ListView {
-            anchors.fill: parent
-            delegate: Item {
-                width: 300; height: 80
-                Column {
-                    Text {
-                        id: myheader
-                        text: header  + " - family: " + font.family  + " size: " + font.pointSize
-                    }
-                    Text {
-                        id: mysubject
-                        text: subject  + " - family: " + font.family + " size: " + font.pointSize
-                    }
-                    Text {
-                        id: mymessage
-                        text: message  + " - family: " + font.family + " size: " + font.pointSize
-                    }
-                }
-            }
-        }
-
-
         // Time
         Rectangle {
             id: rectTime
@@ -72,7 +49,8 @@ Window {
 
             Text {
                 id: time
-                text: qsTr("--:--:--")
+                // text: qsTr("--:--:--")
+                text: message  + " - family: " + font.family + " size: " + font.pointSize
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 80
