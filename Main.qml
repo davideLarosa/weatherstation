@@ -40,7 +40,6 @@ Window {
 
         ListView {
             anchors.fill: parent
-            model: myModel
             delegate: Item {
                 width: 300; height: 80
                 Column {
