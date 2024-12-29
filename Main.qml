@@ -52,7 +52,7 @@ Window {
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 80
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
             }
         }
 
@@ -70,7 +70,7 @@ Window {
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 25
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
             }
         }
 

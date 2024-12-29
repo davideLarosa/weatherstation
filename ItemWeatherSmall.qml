@@ -63,7 +63,7 @@ Rectangle {
         color: "#FA9727"
         font.bold: true
         font.pointSize: 15
-        font.family: fontOpenSans.name
+        // font.family: fontOpenSans.name
         text: forecast.dayOfWeek
     }
     Image {
@@ -90,7 +90,7 @@ Rectangle {
             anchors.topMargin: 15
             font.bold: true
             font.pointSize: 13
-            font.family: fontOpenSans.name
+            // font.family: fontOpenSans.name
             text: forecast.condition
         }
         Rectangle {
@@ -106,7 +106,7 @@ Rectangle {
                 anchors.topMargin: 15
                 font.bold: true
                 font.pointSize: 13
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
                 text: forecast.conditinAtTime + forecast.unit
             }
         }
@@ -147,7 +147,7 @@ Rectangle {
                 anchors.topMargin: 15
                 font.bold: true
                 font.pointSize: 13
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
                 text: forecast.tempAvg + forecast.unit
             }
             Text {
@@ -158,7 +158,7 @@ Rectangle {
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
                 text: forecast.tempMin + forecast.unit
             }
             Text {
@@ -169,7 +169,7 @@ Rectangle {
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
                 text: forecast.tempMax + forecast.unit
             }
             Text {
@@ -180,7 +180,7 @@ Rectangle {
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
                 text: forecast.rain + "%"
             }
             Text {
@@ -191,7 +191,7 @@ Rectangle {
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                font.family: fontOpenSans.name
+                // font.family: fontOpenSans.name
                 text: forecast.humidity + "%"
             }
         }
