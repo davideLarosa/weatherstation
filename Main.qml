@@ -68,7 +68,7 @@ Window {
                 text: qsTr("--:--:--")
                 anchors.centerIn: parent
                 color: "white"
-                font.pointSize: 100
+                font.pointSize: 120
                 font.family: fontc059Bold.name
             }
         }
