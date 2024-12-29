@@ -5,7 +5,7 @@ Window {
     width: 800
     height: 480
     visible: true
-    visibility: mainWindow.FullScreen
+    visibility: Window.FullScreen
     title: qsTr("Raspi Weather")
 
     // Fonts
