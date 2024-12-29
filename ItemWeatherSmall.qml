@@ -129,16 +129,6 @@ Rectangle {
             anchors.rightMargin: 25
             color: "transparent"
 
-            // Text {
-            //     id: txtTempFeels
-            //     color: "#ffffff"
-            //     anchors.rightMargin: 15
-            //     anchors.topMargin: 15
-            //     font.bold: true
-            //     font.pointSize: 13
-            //     font.family: fontOpenSans.name
-            //     text: forecast.tempFeels + forecast.unit
-            // }
             Text {
                 id: txtTempAvg
                 color: "#ffffff"
@@ -195,29 +185,6 @@ Rectangle {
                 text: forecast.humidity + "%"
             }
         }
-
-        // Text {
-        //     id: txtTempMin
-        //     anchors.right: parent.horizontalCenter
-        //     anchors.rightMargin: 15
-        //     anchors.verticalCenter: parent.verticalCenter
-        //     color: "#3ecdfd"
-        //     font.bold: true
-        //     font.pointSize: 13
-        //     font.family: fontOpenSans.name
-        //     text: tempMin
-        // }
-        // Text {
-        //     id: txtTempMax
-        //     anchors.left: parent.horizontalCenter
-        //     anchors.leftMargin: 15
-        //     anchors.verticalCenter: parent.verticalCenter
-        //     color: "#fb5255"
-        //     font.bold: true
-        //     font.pointSize: 13
-        //     font.family: fontOpenSans.name
-        //     text: tempMax
-        // }
     }
 
     Rectangle {
