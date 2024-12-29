@@ -64,18 +64,12 @@ Rectangle {
         visible: forecast.lineVisible
     }
 
-    Rectangle {
-        id: rectImg
-        width: parent.width
-        height: 83
-
-        Image {
-            id: imgWeather
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: 15
-            source: "qrc:/images/113.png"
-            scale: forecast.scaleFactor
-        }
+    Image {
+        id: imgWeather
+        anchors.left: parent.left
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.leftMargin: 15
+        source: "qrc:/images/113.png"
+        scale: forecast.scaleFactor
     }
 }
