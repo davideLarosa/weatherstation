@@ -68,14 +68,8 @@ Window {
                 text: qsTr("--:--:--")
                 anchors.centerIn: parent
                 color: "white"
-                font.pointSize: 80
+                font.pointSize: 100
                 font.family: fontc059Bold.name
-            }
-            Text {
-                id: test
-                anchors.top: time.bottom
-                font.family: fontc059Bold.name
-                text: " - family: " + font.family + " size: " + font.pointSize
             }
         }
 
