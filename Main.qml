@@ -49,12 +49,16 @@ Window {
 
             Text {
                 id: time
-                // text: qsTr("--:--:--")
-                text: message  + " - family: " + font.family + " size: " + font.pointSize
+                text: qsTr("--:--:--")
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 80
                 // font.family: fontOpenSans.name
+            }
+            Text {
+                id: test
+                anchors.top: time.bottom
+                text: message  + " - family: " + font.family + " size: " + font.pointSize
             }
         }
 
