@@ -80,7 +80,7 @@ Window {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rectTime.bottom
             width: parent.width
-            height: 80
+            height: 90
             color: "transparent"
             Text {
                 id: date
@@ -97,7 +97,7 @@ Window {
     Rectangle {
         id: rectWeather0
         width: parent.width
-        height: 150
+        height: 140
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: rectDateTime.bottom
         color: "red"
