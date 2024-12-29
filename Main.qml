@@ -49,7 +49,7 @@ Window {
     Rectangle {
         id: rectDateTime
         width: parent.width
-        height: 230
+        height: 240
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         color: "#233343"
