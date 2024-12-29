@@ -93,7 +93,7 @@ Window {
     }
     Rectangle {
         id: rectWeather0
-        anchosrs.top: rectDateTime.bottom
+        anchors.top: rectDateTime.bottom
         color: "red"
         //Today Weather
         ItemWeather {
