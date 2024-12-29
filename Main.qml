@@ -60,7 +60,7 @@ Window {
             anchors.top: parent.top
             anchors.topMargin: 25
             width: parent.width
-            height: 100
+            height: 120
             color: "transparent"
 
             Text {
