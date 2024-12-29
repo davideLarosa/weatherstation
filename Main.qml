@@ -79,7 +79,7 @@ Window {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rectTime.bottom
             width: parent.width
-            height: 60
+            height: 100
             color: "transparent"
             Text {
                 id: date
