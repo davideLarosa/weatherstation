@@ -19,5 +19,8 @@ int main(int argc, char *argv[])
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.loadFromModule("WeatherStation", "Main");
+    Mainwindow w;
+    w.setWindowState(Qt::WindowFullScreen);
+    w.show();
     return app.exec();
 }
