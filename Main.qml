@@ -8,6 +8,7 @@ Window {
     visibility: Window.FullScreen
     title: qsTr("Raspi Weather")
 
+
     // Fonts
     FontLoader {
         id: fontHelveticaSemibold
@@ -36,6 +37,30 @@ Window {
         anchors.top: parent.top
         color: "#233343"
 
+
+        ListView {
+            anchors.fill: parent
+            model: myModel
+            delegate: Item {
+                width: 300; height: 80
+                Column {
+                    MyText {
+                        id: myheader
+                        text: header  + " - family: " + font.family  + " size: " + font.pointSize
+                    }
+                    MyText {
+                        id: mysubject
+                        text: subject  + " - family: " + font.family + " size: " + font.pointSize
+                    }
+                    MyText {
+                        id: mymessage
+                        text: message  + " - family: " + font.family + " size: " + font.pointSize
+                    }
+                }
+            }
+        }
+
+
         // Time
         Rectangle {
             id: rectTime
@@ -48,7 +73,7 @@ Window {
 
             Text {
                 id: time
-                text: qsTr("10:25")
+                text: qsTr("--:--:--")
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 80
@@ -66,7 +91,7 @@ Window {
             color: "transparent"
             Text {
                 id: date
-                text: qsTr("March 25 2020")
+                text: qsTr("-- -- ----")
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 25
@@ -109,7 +134,7 @@ Window {
                     height: parent.height
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
-                    dayOfWeek: qsTr("Monday")
+                    dayOfWeek: qsTr("--")
                     lineVisible: false
                 }
             }
@@ -149,7 +174,7 @@ Window {
                     height: parent.height
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
-                    dayOfWeek: qsTr("Tuesday")
+                    dayOfWeek: qsTr("--")
                     lineVisible: false
                 }
             }
