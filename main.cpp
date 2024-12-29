@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     apirest.restApiRequest();
 
     QTimer timer;
-    QObject::connect(&timer, &QTimer::timeout, &apirest.restApiRequest());
+    QObject::connect(&timer, &QTimer::timeout, apirest.restApiRequest());
     timer.start(1000);
 
     return app.exec();
