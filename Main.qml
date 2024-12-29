@@ -80,7 +80,7 @@ Window {
             anchors.top: rectTime.bottom
             width: parent.width
             height: 80
-            color: "red"
+            color: "blue"
             Text {
                 id: date
                 text: qsTr("-- -- ----")
