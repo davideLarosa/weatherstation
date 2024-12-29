@@ -52,8 +52,7 @@ Window {
         height: 230
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        // color: "#233343"
-        color: "yellow"
+        color: "#233343"
 
         // Time
         Rectangle {
@@ -98,10 +97,11 @@ Window {
     Rectangle {
         id: rectWeather0
         width: parent.width
-        height: 100
+        height: 150
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: rectDateTime.bottom
         color: "red"
+
         //Today Weather
         ItemWeatherSmall {
             id: weather0
@@ -114,10 +114,12 @@ Window {
         }
     }
 
-    // Rectangle {
-    //     id: rectAdditionaWeather
-    //     anchors.top: rectWeather0.bottom
-    //     color: "blue"
+    Rectangle {
+        id: rectAdditionaWeather
+        widht: parent.width
+        height: 420
+        anchors.top: rectWeather0.bottom
+        color: "blue"
 
     //     // Additions
     //     Rectangle {
@@ -169,7 +171,7 @@ Window {
     //             }
     //         }
     //     }
-    // }
+    }
     // the invisible button
     Rectangle {
         id: btnRequest
