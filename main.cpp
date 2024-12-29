@@ -19,5 +19,6 @@ int main(int argc, char *argv[])
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.loadFromModule("WeatherStation", "Main");
+    appBridge.restApiRequest();
     return app.exec();
 }
