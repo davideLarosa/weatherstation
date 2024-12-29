@@ -116,7 +116,7 @@ Window {
 
     Rectangle {
         id: rectAdditionaWeather
-        widht: parent.width
+        width: parent.width
         height: 420
         anchors.top: rectWeather0.bottom
         color: "blue"
