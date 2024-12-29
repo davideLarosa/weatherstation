@@ -20,5 +20,10 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.loadFromModule("WeatherStation", "Main");
     apirest.restApiRequest();
+
+    QTimer *callApi = new QTimer(this);
+    connect(callApi, SIGNAL(timeout()), this, SLOT(apirest.restApiRequest());
+    timer->start(1000);
+
     return app.exec();
 }

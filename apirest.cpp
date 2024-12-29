@@ -30,6 +30,7 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
     setJsonData(jsdoc.object());
     QByteArray docByteArray = jsdoc.toJson(QJsonDocument::Compact);
 
+    qDebug() << QString("Api request run");
   //  qDebug() << QLatin1String(docByteArray);
 }
 
