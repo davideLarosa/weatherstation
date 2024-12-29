@@ -60,8 +60,8 @@ Window {
             anchors.top: parent.top
             anchors.topMargin: 25
             width: parent.width
-            height: 120
-            color: "transparent"
+            height: 140
+            color: "red"
 
             Text {
                 id: time
@@ -79,8 +79,8 @@ Window {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rectTime.bottom
             width: parent.width
-            height: 60
-            color: "transparent"
+            height: 80
+            color: "red"
             Text {
                 id: date
                 text: qsTr("-- -- ----")
