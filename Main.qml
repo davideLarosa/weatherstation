@@ -5,7 +5,7 @@ Window {
     width: 800
     height: 480
     visible: true
-    title: qsTr("Raspi Weather PIPPO!!!")
+    title: qsTr("Raspi Weather")
 
     // Fonts
     FontLoader {
