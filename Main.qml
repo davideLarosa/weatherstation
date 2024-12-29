@@ -44,15 +44,15 @@ Window {
             delegate: Item {
                 width: 300; height: 80
                 Column {
-                    MyText {
+                    Text {
                         id: myheader
                         text: header  + " - family: " + font.family  + " size: " + font.pointSize
                     }
-                    MyText {
+                    Text {
                         id: mysubject
                         text: subject  + " - family: " + font.family + " size: " + font.pointSize
                     }
-                    MyText {
+                    Text {
                         id: mymessage
                         text: message  + " - family: " + font.family + " size: " + font.pointSize
                     }
