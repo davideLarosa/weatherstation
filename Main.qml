@@ -48,10 +48,11 @@ Window {
     Rectangle {
         id: rectDateTime
         width: parent.width
-        height: parent.height
+        height: 230
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        color: "#233343"
+        // color: "#233343"
+        color: "yellow"
 
         // Time
         Rectangle {
@@ -93,6 +94,9 @@ Window {
     }
     Rectangle {
         id: rectWeather0
+        width: parent.width
+        height: 100
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: rectDateTime.bottom
         color: "red"
         //Today Weather
