@@ -103,7 +103,7 @@ Window {
         color: "red"
 
         //Today Weather
-        ItemWeather {
+        ItemWeatherBig {
             id: weather0
             height: 81
             width: parent.width
