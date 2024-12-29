@@ -1,5 +1,6 @@
 #include "apirest.h"
 #include <QFile>
+#include <QDateTime>
 
 ApiRest::ApiRest(QObject *parent)
     : QObject{parent}
@@ -30,7 +31,10 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
     setJsonData(jsdoc.object());
     QByteArray docByteArray = jsdoc.toJson(QJsonDocument::Compact);
 
-    qDebug() << QString("Api request run");
+    QDateTime dateAndTime = QDateTime::currentDateTime();
+
+
+    qDebug() << QString("Api request run at " + QDateTime::currentDateTime().time().toString() + " on " + QDateTime::currentDateTime().date().toString());
   //  qDebug() << QLatin1String(docByteArray);
 }
 

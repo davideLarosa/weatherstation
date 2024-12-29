@@ -4,10 +4,6 @@
 #include <QTimer>
 #include "apirest.h"
 
-void callApi() {
-    qDebug() << "Il timer è scattato!";
-}
-
 int main(int argc, char *argv[])
 {
 
@@ -27,8 +23,8 @@ int main(int argc, char *argv[])
     apirest.restApiRequest();
 
     QTimer timer;
-    QObject::connect(&timer, &QTimer::timeout, &callApi);
-    timer.start(1000);
+    QObject::connect(&timer, &QTimer::timeout, &apirest, &ApiRest::restApiRequest);
+    timer.start(3600000);
 
     return app.exec();
 }

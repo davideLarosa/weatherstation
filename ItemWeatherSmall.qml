@@ -27,7 +27,6 @@ Rectangle {
         let code=0;
         let curTime = new Date().getHours()*100;
 
-        console.log(curTime);
         if (curTime >= 0 && curTime < 300) {
             code=0
         }
