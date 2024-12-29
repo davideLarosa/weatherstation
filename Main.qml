@@ -103,9 +103,9 @@ Window {
         color: "red"
 
         //Today Weather
-        ItemWeatherSmall {
+        ItemWeather {
             id: weather0
-            height: parent.height
+            height: 81
             width: parent.width
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
