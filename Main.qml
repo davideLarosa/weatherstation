@@ -45,6 +45,7 @@ Window {
         }
     }
 
+    // Top rectangle for time and date
     Rectangle {
         id: rectDateTime
         width: parent.width
@@ -92,6 +93,8 @@ Window {
             }
         }
     }
+
+    // middle rectangle for today weather
     Rectangle {
         id: rectWeather0
         width: parent.width
@@ -100,73 +103,73 @@ Window {
         anchors.top: rectDateTime.bottom
         color: "red"
         //Today Weather
-        ItemWeather {
+        ItemWeatherSmall {
             id: weather0
-            height: 130
-            width: 150
-            anchors.top: rectDate.bottom
+            height: parent.height
+            width: parent.width
+            anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
             scaleFactor: 1.8
             lineVisible: false
         }
     }
 
-    Rectangle {
-        id: rectAdditionaWeather
-        anchors.top: rectWeather0.bottom
-        color: "blue"
+    // Rectangle {
+    //     id: rectAdditionaWeather
+    //     anchors.top: rectWeather0.bottom
+    //     color: "blue"
 
-        // Additions
-        Rectangle {
-            id: lower_line
-            height: parent.height/4
-            width: parent.width
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            color: "transparent"
+    //     // Additions
+    //     Rectangle {
+    //         id: lower_line
+    //         height: parent.height/4
+    //         width: parent.width
+    //         anchors.horizontalCenter: parent.horizontalCenter
+    //         anchors.bottom: parent.bottom
+    //         color: "transparent"
 
-            Rectangle {
-                id: lower_line_left
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                height: parent.height
-                width: parent.width/2
-                color: "transparent"
+    //         Rectangle {
+    //             id: lower_line_left
+    //             anchors.verticalCenter: parent.verticalCenter
+    //             anchors.bottom: parent.bottom
+    //             anchors.left: parent.left
+    //             height: parent.height
+    //             width: parent.width/2
+    //             color: "transparent"
 
-                ItemWeatherSmall {
-                    id: weather1
-                    width: parent.width
-                    height: parent.height
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    dayOfWeek: qsTr("--")
-                    lineVisible: false
-                }
-            }
+    //             ItemWeatherSmall {
+    //                 id: weather1
+    //                 width: parent.width
+    //                 height: parent.height
+    //                 anchors.verticalCenter: parent.verticalCenter
+    //                 anchors.left: parent.left
+    //                 dayOfWeek: qsTr("--")
+    //                 lineVisible: false
+    //             }
+    //         }
 
-            Rectangle {
-                id: lower_line_right
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.bottom: parent.bottom
-                anchors.left: lower_line_left.right
-                height: parent.height
-                width: parent.width/2
-                color: "transparent"
+    //         Rectangle {
+    //             id: lower_line_right
+    //             anchors.verticalCenter: parent.verticalCenter
+    //             anchors.bottom: parent.bottom
+    //             anchors.left: lower_line_left.right
+    //             height: parent.height
+    //             width: parent.width/2
+    //             color: "transparent"
 
 
-                ItemWeatherSmall {
-                    id: weather2
-                    width: parent.width
-                    height: parent.height
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    dayOfWeek: qsTr("--")
-                    lineVisible: false
-                }
-            }
-        }
-    }
+    //             ItemWeatherSmall {
+    //                 id: weather2
+    //                 width: parent.width
+    //                 height: parent.height
+    //                 anchors.verticalCenter: parent.verticalCenter
+    //                 anchors.left: parent.left
+    //                 dayOfWeek: qsTr("--")
+    //                 lineVisible: false
+    //             }
+    //         }
+    //     }
+    // }
     // the invisible button
     Rectangle {
         id: btnRequest
