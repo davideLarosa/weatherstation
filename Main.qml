@@ -47,18 +47,18 @@ Window {
             height: 100
             color: "transparent"
 
-            Text {
-                id: time
-                text: qsTr("--:--:--")
-                anchors.centerIn: parent
-                color: "white"
-                font.pointSize: 80
-                // font.family: fontOpenSans.name
-            }
+            // Text {
+            //     id: time
+            //     text: qsTr("--:--:--")
+            //     anchors.centerIn: parent
+            //     color: "white"
+            //     font.pointSize: 80
+            //     // font.family: fontOpenSans.name
+            // }
             Text {
                 id: test
                 anchors.top: time.bottom
-                text: message  + " - family: " + font.family + " size: " + font.pointSize
+                text: " - family: " + font.family + " size: " + font.pointSize
             }
         }
 
