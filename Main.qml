@@ -110,7 +110,7 @@ Window {
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
             scaleFactor: 1.8
-            lineVisible: false
+            lineVisible: true
         }
     }
 

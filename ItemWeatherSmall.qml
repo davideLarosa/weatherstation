@@ -2,7 +2,6 @@ import QtQuick 2.0
 
 Rectangle {
     id: forecast
-    property string itDayOfWeek: ""
     property string dayOfWeek: " "
     property string feelsLike: "-"
     property string unit: " °C"

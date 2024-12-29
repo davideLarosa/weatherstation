@@ -19,7 +19,7 @@ void ApiRest::setJsonData(const QJsonObject& data) {
 
 void ApiRest::restApiRequest() {
     QNetworkRequest request;
-    QUrl url("https://wttr.in/rome?format=j1&lang=it");
+    QUrl url("https://wttr.in/Rome?format=j1&lang=it");
 
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setUrl(url);
