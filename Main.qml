@@ -79,14 +79,14 @@ Window {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: rectTime.bottom
             width: parent.width
-            height: 100
+            height: 60
             color: "transparent"
             Text {
                 id: date
                 text: qsTr("-- -- ----")
                 anchors.centerIn: parent
                 color: "white"
-                font.pointSize: 25
+                font.pointSize: 40
                 font.family: fontc059Bold.name
             }
         }
