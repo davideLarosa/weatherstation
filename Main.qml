@@ -18,6 +18,22 @@ Window {
         id: fontOpenSans
         source: "qrc:/fonts/OpenSans-Light.ttf"
     }
+    FontLoader {
+        id: fontc059BoldIta
+        source: "qrc:/fonts/C059-BdIta.ttf"
+    }
+    FontLoader {
+        id: fontc059Bold
+        source: "qrc:/fonts/C059-Bold.ttf"
+    }
+    FontLoader {
+        id: fontc059Ita
+        source: "qrc:/fonts/C059-Italic.ttf"
+    }
+    FontLoader {
+        id: fontc059Roman
+        source: "qrc:/fonts/C059-Roman.ttf"
+    }
 
     Timer {
         interval: 1000
@@ -47,17 +63,18 @@ Window {
             height: 100
             color: "transparent"
 
-            // Text {
-            //     id: time
-            //     text: qsTr("--:--:--")
-            //     anchors.centerIn: parent
-            //     color: "white"
-            //     font.pointSize: 80
-            //     // font.family: fontOpenSans.name
-            // }
+            Text {
+                id: time
+                text: qsTr("--:--:--")
+                anchors.centerIn: parent
+                color: "white"
+                font.pointSize: 80
+                font.family: fontc059Bold.name
+            }
             Text {
                 id: test
                 anchors.top: time.bottom
+                font.family: fontc059Bold.name
                 text: " - family: " + font.family + " size: " + font.pointSize
             }
         }
@@ -76,7 +93,7 @@ Window {
                 anchors.centerIn: parent
                 color: "white"
                 font.pointSize: 25
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
             }
         }
 

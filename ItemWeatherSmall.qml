@@ -63,7 +63,7 @@ Rectangle {
         color: "#FA9727"
         font.bold: true
         font.pointSize: 15
-        // font.family: fontOpenSans.name
+        font.family: fontc059Bold.name
         text: forecast.dayOfWeek
     }
     Image {
@@ -90,7 +90,7 @@ Rectangle {
             anchors.topMargin: 15
             font.bold: true
             font.pointSize: 13
-            // font.family: fontOpenSans.name
+            font.family: fontc059Bold.name
             text: forecast.condition
         }
         Rectangle {
@@ -106,7 +106,7 @@ Rectangle {
                 anchors.topMargin: 15
                 font.bold: true
                 font.pointSize: 13
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
                 text: forecast.conditinAtTime + forecast.unit
             }
         }
@@ -147,7 +147,7 @@ Rectangle {
                 anchors.topMargin: 15
                 font.bold: true
                 font.pointSize: 13
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
                 text: forecast.tempAvg + forecast.unit
             }
             Text {
@@ -158,7 +158,7 @@ Rectangle {
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
                 text: forecast.tempMin + forecast.unit
             }
             Text {
@@ -169,29 +169,29 @@ Rectangle {
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
                 text: forecast.tempMax + forecast.unit
             }
             Text {
                 id: txtRain
-                color: "blue"
+                color: "white"
                 anchors.top: txtTempMax.bottom
                 anchors.rightMargin: 5
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
                 text: forecast.rain + "%"
             }
             Text {
                 id: txtHumidity
-                color: "blue"
+                color: "white"
                 anchors.top: txtRain.bottom
                 anchors.rightMargin: 5
                 anchors.topMargin: 5
                 font.bold: true
                 font.pointSize: 13
-                // font.family: fontOpenSans.name
+                font.family: fontc059Bold.name
                 text: forecast.humidity + "%"
             }
         }

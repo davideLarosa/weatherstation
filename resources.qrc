@@ -78,5 +78,9 @@
         <file>images/42-s.png</file>
         <file>images/43-s.png</file>
         <file>images/44-s.png</file>
+        <file>fonts/C059-Roman.ttf</file>
+        <file>fonts/C059-Bold.ttf</file>
+        <file>fonts/C059-BdIta.ttf</file>
+        <file>fonts/C059-Italic.ttf</file>
     </qresource>
 </RCC>
