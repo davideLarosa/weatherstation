@@ -5,6 +5,7 @@ Rectangle {
     property string itDayOfWeek: ""
     property string dayOfWeek: " "
     property string feelsLike: "-"
+    property string tempCurr: "Curr: --.-"
     property string unit: " °C"
     property string tempFeels: "Feels: --.-"
     property string tempMin: "Min: --.-"
@@ -161,6 +162,17 @@ Rectangle {
                 font.pointSize: 13
                 font.family: fontc059Bold.name
                 text: forecast.tempMax + forecast.unit
+            }
+            Text {
+                id: txtTempCurr
+                anchors.left: txtTempMax.right
+                anchors.leftMargin: 15
+                anchors.verticalCenter: parent.verticalCenter
+                color: "#ffffff"
+                font.bold: true
+                font.pointSize: 13
+                font.family: fontOpenSans.name
+                text: tempCurr + unit
             }
             Text {
                 id: txtRain
