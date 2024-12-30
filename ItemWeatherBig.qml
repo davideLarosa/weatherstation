@@ -67,10 +67,10 @@ Rectangle {
     Rectangle {
         id: rectImage
         width: parent.width
-        height: parent.height
+        height: 140
+        anchors.left: mainWindow.left
+        anchors.top: mainWindow.rectWeather0.top
         color: "transparent"
-        anchors.left: parent.left
-        anchors.top: parent.top
 
         Image {
             id: imgWeather
