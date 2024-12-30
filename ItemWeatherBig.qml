@@ -66,8 +66,8 @@ Rectangle {
             id: rectImage
             width: parent.width
             height: 140
-            anchors.left: mainWindow.left
-            anchors.top: mainWindow.rectWeather0.top
+            anchors.left: parent.left
+            anchors.top: parent.top
             color: "transparent"
 
             Image {
