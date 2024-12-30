@@ -57,28 +57,27 @@ Rectangle {
         id: verticalLine
         height: 1
         width: parent.width
-        anchors.verticalCenter: parent.verticalCenter
         anchors.top: parent.top
         border.width: 1
         border.color: "white"
         visible: forecast.lineVisible
-    }
 
-//    Rectangle {
-//        id: rectImage
-//        width: parent.width
-//        height: 140
-//        anchors.left: mainWindow.left
-//        anchors.top: mainWindow.rectWeather0.top
-//        color: "transparent"
-//
-//        Image {
-//            id: imgWeather
-//            anchors.left: parent.left
-//            anchors.verticalCenter: parent.verticalCenter
-//            anchors.leftMargin: 10
-//            source: "qrc:/images/113.png"
-//            scale: forecast.scaleFactor
-//        }
-//    }
+        Rectangle {
+            id: rectImage
+            width: parent.width
+            height: 140
+            anchors.left: mainWindow.left
+            anchors.top: mainWindow.rectWeather0.top
+            color: "transparent"
+
+            Image {
+                id: imgWeather
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 10
+                source: "qrc:/images/113.png"
+                scale: forecast.scaleFactor
+            }
+        }
+    }
 }
