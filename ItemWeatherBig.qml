@@ -62,22 +62,23 @@ Rectangle {
         border.color: "white"
         visible: forecast.lineVisible
 
-        Rectangle {
-            id: rectImage
-            width: parent.width
-            height: 140
-            anchors.left: parent.left
-            anchors.top: parent.top
-            color: "transparent"
+    }
 
-            Image {
-                id: imgWeather
-                anchors.left: parent.left
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.leftMargin: 10
-                source: "qrc:/images/113.png"
-                scale: forecast.scaleFactor
-            }
+    Rectangle {
+        id: rectImage
+        width: parent.width
+        height: 140
+        anchors.left: parent.left
+        anchors.top: parent.top
+        color: "transparent"
+
+        Image {
+            id: imgWeather
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.leftMargin: 10
+            source: "qrc:/images/113.png"
+            scale: forecast.scaleFactor
         }
     }
 }
