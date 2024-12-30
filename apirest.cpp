@@ -44,5 +44,6 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
         QTextStream stream(&file);
         stream << logString << Qt::endl;
     }
+    file.close();
 }
 
