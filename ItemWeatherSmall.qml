@@ -52,148 +52,147 @@ Rectangle {
         }
         return code;
     }
-
-    Text {
-        id: txtDayOfWeek
-        anchors.horizontalCenter: imgWeather.horizontalCenter
-        anchors.horizontalCenterOffset: 10
-        anchors.bottom: imgWeather.top
-        anchors.bottomMargin: 10
-        color: "#FA9727"
-        font.bold: true
-        font.pointSize: 15
-        font.family: fontc059Bold.name
-        text: forecast.dayOfWeek
-    }
-    Image {
-        id: imgWeather
-        anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.leftMargin: 15
-        source: "qrc:/images/113.png"
-        scale: forecast.scaleFactor
-    }
-
-    Rectangle {
-        id: condition
-        anchors.top: imgWeather.bottom
-        width: imgWeather.width
-        anchors.horizontalCenter: imgWeather.horizontalCenter
-        anchors.horizontalCenterOffset: 15
-        color: "transparent"
-
-        Text {
-            id: txtCondition
-            color: "#ffffff"
-            anchors.rightMargin: 15
-            anchors.topMargin: 15
-            font.bold: true
-            font.pointSize: 13
-            font.family: fontc059Bold.name
-            text: forecast.condition
-        }
-        Rectangle {
-            id: conditionAtTime
-            anchors.top: txtCondition.bottom
-            width: txtCondition.width
-            color: "transparent"
-
-            Text {
-                id: txtConditionAtTime
-                color: "#ffffff"
-                anchors.rightMargin: 15
-                anchors.topMargin: 15
-                font.bold: true
-                font.pointSize: 13
-                font.family: fontc059Bold.name
-                text: forecast.conditionAtTime + forecast.unit
-            }
-        }
-    }
-    Rectangle {
-        id: rectTemperatures
-        height: parent.height
-        width: parent.width
-        anchors.top: parent.top
-        anchors.topMargin: 10 * forecast.scaleFactor
-        anchors.horizontalCenter: parent.horizontalCenter
-        color: "transparent"
-
-        Rectangle {
-            id: temp_table
-            height: parent.height
-            width: parent.width/2
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.rightMargin: 25
-            color: "transparent"
-
-            Text {
-                id: txtTempAvg
-                color: "#ffffff"
-                //anchors.top: txtTempFeels.bottom
-                anchors.rightMargin: 5
-                anchors.topMargin: 15
-                font.bold: true
-                font.pointSize: 13
-                font.family: fontc059Bold.name
-                text: forecast.tempAvg + forecast.unit
-            }
-            Text {
-                id: txtTempMin
-                color: "#3ecdfd"
-                anchors.top: txtTempAvg.bottom
-                anchors.rightMargin: 5
-                anchors.topMargin: 5
-                font.bold: true
-                font.pointSize: 13
-                font.family: fontc059Bold.name
-                text: forecast.tempMin + forecast.unit
-            }
-            Text {
-                id: txtTempMax
-                color: "#fb5255"
-                anchors.top: txtTempMin.bottom
-                anchors.rightMargin: 5
-                anchors.topMargin: 5
-                font.bold: true
-                font.pointSize: 13
-                font.family: fontc059Bold.name
-                text: forecast.tempMax + forecast.unit
-            }
-            Text {
-                id: txtRain
-                color: "white"
-                anchors.top: txtTempMax.bottom
-                anchors.rightMargin: 5
-                anchors.topMargin: 5
-                font.bold: true
-                font.pointSize: 13
-                font.family: fontc059Bold.name
-                text: forecast.rain + "%"
-            }
-            Text {
-                id: txtHumidity
-                color: "white"
-                anchors.top: txtRain.bottom
-                anchors.rightMargin: 5
-                anchors.topMargin: 5
-                font.bold: true
-                font.pointSize: 13
-                font.family: fontc059Bold.name
-                text: forecast.humidity + "%"
-            }
-        }
-    }
-
-    Rectangle {
-        id: verticalLine
-        height: parent.height
-        width: 1
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.right: parent.right
-        border.width: 1
-        border.color: "white"
-        visible: forecast.lineVisible
-    }
+//
+//    Text {
+//        id: txtDayOfWeek
+//        anchors.horizontalCenter: imgWeather.horizontalCenter
+//        anchors.horizontalCenterOffset: 10
+//        anchors.bottom: imgWeather.top
+//        anchors.bottomMargin: 10
+//        color: "#FA9727"
+//        font.bold: true
+//        font.pointSize: 15
+//        font.family: fontc059Bold.name
+//        text: forecast.dayOfWeek
+//    }
+//    Image {
+//        id: imgWeather
+//        anchors.left: parent.left
+//        anchors.verticalCenter: parent.verticalCenter
+//        anchors.leftMargin: 15
+//        source: "qrc:/images/113.png"
+//        scale: forecast.scaleFactor
+//    }
+//
+//    Rectangle {
+//        id: condition
+//        anchors.top: imgWeather.bottom
+//        width: imgWeather.width
+//        anchors.horizontalCenter: imgWeather.horizontalCenter
+//        anchors.horizontalCenterOffset: 15
+//        color: "transparent"
+//
+//        Text {
+//            id: txtCondition
+//            color: "#ffffff"
+//            anchors.rightMargin: 15
+//            anchors.topMargin: 15
+//            font.bold: true
+//            font.pointSize: 13
+//            font.family: fontc059Bold.name
+//            text: forecast.condition
+//        }
+//        Rectangle {
+//            id: conditionAtTime
+//            anchors.top: txtCondition.bottom
+//            width: txtCondition.width
+//            color: "transparent"
+//
+//            Text {
+//                id: txtConditionAtTime
+//                color: "#ffffff"
+//                anchors.rightMargin: 15
+//                anchors.topMargin: 15
+//                font.bold: true
+//                font.pointSize: 13
+//                font.family: fontc059Bold.name
+//                text: forecast.conditionAtTime + forecast.unit
+//            }
+//        }
+//    }
+//    Rectangle {
+//        id: rectTemperatures
+//        height: parent.height
+//        width: parent.width
+//        anchors.top: parent.top
+//        anchors.topMargin: 10 * forecast.scaleFactor
+//        anchors.horizontalCenter: parent.horizontalCenter
+//        color: "transparent"
+//
+//        Column {
+//            id: colTemp_table
+//            height: parent.height
+//            width: parent.width/2
+//            anchors.right: parent.right
+//            anchors.top: parent.top
+//            anchors.rightMargin: 25
+//
+//            Text {
+//                id: txtTempAvg
+//                color: "#ffffff"
+//                //anchors.top: txtTempFeels.bottom
+//                anchors.rightMargin: 5
+//                anchors.topMargin: 15
+//                font.bold: true
+//                font.pointSize: 13
+//                font.family: fontc059Bold.name
+//                text: forecast.tempAvg + forecast.unit
+//            }
+//            Text {
+//                id: txtTempMin
+//                color: "#3ecdfd"
+//                anchors.top: txtTempAvg.bottom
+//                anchors.rightMargin: 5
+//                anchors.topMargin: 5
+//                font.bold: true
+//                font.pointSize: 13
+//                font.family: fontc059Bold.name
+//                text: forecast.tempMin + forecast.unit
+//            }
+//            Text {
+//                id: txtTempMax
+//                color: "#fb5255"
+//                anchors.top: txtTempMin.bottom
+//                anchors.rightMargin: 5
+//                anchors.topMargin: 5
+//                font.bold: true
+//                font.pointSize: 13
+//                font.family: fontc059Bold.name
+//                text: forecast.tempMax + forecast.unit
+//            }
+//            Text {
+//                id: txtRain
+//                color: "white"
+//                anchors.top: txtTempMax.bottom
+//                anchors.rightMargin: 5
+//                anchors.topMargin: 5
+//                font.bold: true
+//                font.pointSize: 13
+//                font.family: fontc059Bold.name
+//                text: forecast.rain + "%"
+//            }
+//            Text {
+//                id: txtHumidity
+//                color: "white"
+//                anchors.top: txtRain.bottom
+//                anchors.rightMargin: 5
+//                anchors.topMargin: 5
+//                font.bold: true
+//                font.pointSize: 13
+//                font.family: fontc059Bold.name
+//                text: forecast.humidity + "%"
+//            }
+//        }
+//    }
+//
+//    Rectangle {
+//        id: verticalLine
+//        height: parent.height
+//        width: 1
+//        anchors.verticalCenter: parent.verticalCenter
+//        anchors.right: parent.right
+//        border.width: 1
+//        border.color: "white"
+//        visible: forecast.lineVisible
+//    }
 }
