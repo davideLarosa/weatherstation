@@ -126,15 +126,15 @@ Window {
         }
     }
 
-        Rectangle {
-            id: recAddWhorizontalLine
-            height: 1
-            anchors.top: rectWeather0.bottom
-            width: parent.width
-            border.width: 1
-            border.color: "white"
-            visible: true
-        }
+    Rectangle {
+        id: recAddWhorizontalLine
+        height: 1
+        anchors.top: rectWeather0.bottom
+        width: parent.width
+        border.width: 1
+        border.color: "white"
+        visible: true
+    }
 
    Rectangle {
         id: rectAdditionaWeather

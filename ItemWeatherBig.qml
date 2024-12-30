@@ -72,14 +72,13 @@ Rectangle {
     Rectangle {
         id: bigWCenter
         anchors.left: bigWLeft.right
-        width: 874
+        width: 437
         height: parent.height
         color: "blue"
 
         Text {
             id: txtCurrentTemp
             width: parent.width
-            height: parent.height
             anchors.left: parent.left
             anchors.top: parent.top
             font.family: fontc059Bold.name
@@ -92,12 +91,11 @@ Rectangle {
         Text {
             id: txtFeelsLike
             width: parent.width
-            anchors.left: parent.left
             anchors.top: txtCurrentTemp.bottom
             font.family: fontc059Bold.name
             font.bold: true
             font.pointSize: 25
-            color: "red"
+            color: "white"
             text: forecast.tempFeels + forecast.unit
         } 
     }
@@ -106,7 +104,7 @@ Rectangle {
         id: bigWRight
         anchors.left: bigWCenter.right
         height: parent.height
-        width: 874
+        width: 437
         color: "red"
     }
 }
