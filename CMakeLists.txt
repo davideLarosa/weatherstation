@@ -16,14 +16,9 @@ qt_add_executable(appWeatherStation
 qt_add_qml_module(appWeatherStation
     URI WeatherStation
     VERSION 1.0
-    QML_FILES Main.qml ItemWeather.qml
-    RESOURCES
     SOURCES apirest.h apirest.cpp
     RESOURCES resources.qrc
-    QML_FILES ItemWeatherSmall.qml
-    QML_FILES ItemWeatherBig.qml
-    QML_FILES VerticalLine.qml
-    QML_FILES HorizontalLine.qml
+    QML_FILES Main.qml ItemWeatherSmall.qml ItemWeatherBig.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -33,8 +28,8 @@ set_target_properties(appWeatherStation PROPERTIES
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appWeatherStation
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+    MACOSX_BUNDLE FALSE
+    WIN32_EXECUTABLE FALSE
 )
 
 target_link_libraries(appWeatherStation

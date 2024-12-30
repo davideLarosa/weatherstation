@@ -102,11 +102,13 @@ Window {
         anchors.top: rectDateTime.bottom
         color: "red"
 
-        HorizontalLine {
-            id: recW0HorizontalLine
-            width: parent.width
+        Rectangle {
+            id: recW0horizontalLine
             height: 1
-            visible: "true"
+            width: parent.width
+            border.width: 1
+            border.color: "white"
+            visible: true
         }
 
         //Today Weather
@@ -128,13 +130,14 @@ Window {
         anchors.top: rectWeather0.bottom
         color: "blue"
 
-        HorizontalLine {
-            id: recAddWHorizontalLine
-            width: parent.width
+        Rectangle {
+            id: recAddWhorizontalLine
             height: 1
-            visible: "true"
+            width: parent.width
+            border.width: 1
+            border.color: "white"
+            visible: true
         }
-
     //     // Additions
     //     Rectangle {
     //         id: lower_line
