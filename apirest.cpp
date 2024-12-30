@@ -36,7 +36,7 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
 
     QString logString = new Qstring("Api request run at " + QDateTime::currentDateTime().time().toString() + " on " + QDateTime::currentDateTime().date().toString());
 
-    qDebug() << logString
+    qDebug() << logString;
 
     QString filename = "/tmp/weatherStation.log";
     QFile file(filename);
