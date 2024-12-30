@@ -66,7 +66,7 @@ Rectangle {
 
         Row {
             id: rowHumidity
-            anchors.top: rowCurrentTemp.bottom
+            anchors.top: parent.top
             anchors.left: parent.left
 
             Text {
