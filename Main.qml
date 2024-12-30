@@ -192,20 +192,20 @@ Window {
     //     }
     }
     // the invisible button
-    Rectangle {
-        id: btnRequest
-        width: 120
-        height: 50
-        anchors.top: parent.top
-        anchors.right: parent.right
-        color: "red"
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                appBridge.restApiRequest();
-            }
-        }
-    }
+ //   Rectangle {
+ //       id: btnRequest
+ //       width: 120
+ //       height: 50
+ //       anchors.top: parent.top
+ //       anchors.right: parent.right
+ //       color: "red"
+ //       MouseArea {
+ //           anchors.fill: parent
+ //           onClicked: {
+ //               appBridge.restApiRequest();
+ //           }
+ //       }
+ //   }
     Connections {
         target: appBridge
         function onDataChanged() {

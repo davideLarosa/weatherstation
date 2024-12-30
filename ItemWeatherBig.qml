@@ -56,7 +56,7 @@ Rectangle {
     Rectangle {
         id: rectImage
         width: parent.width
-        height: 140
+        height: parent.height
         anchors.left: parent.left
         anchors.top: parent.top
         color: "transparent"
@@ -67,7 +67,7 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.leftMargin: 10
             source: "qrc:/images/113.png"
-            scale: forecast.scaleFactor
+            //scale: forecast.scaleFactor
         }
     }
 }
