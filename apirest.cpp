@@ -40,7 +40,7 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
 
     QString filename = "/tmp/weatherStation.log";
     QFile file(filename);
-    if (file.open(QIODevice::Append | QIODevide::Text)) {
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
         QTextStream stream(&file);
         stream << logString << Qt::endl;
         file.close();
