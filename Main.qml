@@ -105,7 +105,7 @@ Window {
         //Today Weather
         ItemWeatherBig {
             id: weather0
-            height: 81
+            height: parent.height
             width: parent.width
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
