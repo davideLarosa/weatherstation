@@ -120,7 +120,8 @@ Window {
             width: parent.width
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
-            scaleFactor: 4
+            anchors.verticalCenter: parent.verticalCenter
+            scaleFactor: 3.5
             lineVisible: false
         }
     }
