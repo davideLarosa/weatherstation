@@ -12,7 +12,7 @@ Rectangle {
     property string rain: "Rain: -"
     property string humidity: "H: -"
     property string condition: "-"
-    property string conditinAtTime: "-"
+    property string conditionAtTime: "-"
     property bool lineVisible: true
     property real scaleFactor: 1.0
 
@@ -106,7 +106,7 @@ Rectangle {
                 font.bold: true
                 font.pointSize: 13
                 font.family: fontc059Bold.name
-                text: forecast.conditinAtTime + forecast.unit
+                text: forecast.conditionAtTime + forecast.unit
             }
         }
     }

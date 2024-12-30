@@ -221,11 +221,12 @@ Window {
             //weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C;
             //weather0.tempFeels = "Feels like: " + appBridge.JsonData.current_condition[0].FeelsLikeC;
             weather0.tempCurr = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].FeelsLikeC + ")"
-            weather0.humidity = "Humidity: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].humidity;
-            weather0.rainPercent = "Rain: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofrain;
+            weather0.humidity = "Humidity:\t " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].humidity;
+            weather0.rainPercent = "Rain:\t\t " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofrain;
             weather0.rainMm = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].precipMM;
-            weather0.windPercent = "Wind: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofwindy;
+            weather0.windPercent = "Wind:\t " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofwindy;
             weather0.windKmH = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].windspeedKmph;
+            weather0.condition = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].weatherDesc[0].value;
             weather0.setIcon(appBridge.JsonData.current_condition[0].weatherCode)
 
             // //Today + 1
@@ -234,7 +235,7 @@ Window {
             weather1.tempMin = "Min: " + appBridge.JsonData.weather[1].mintempC;
             weather1.tempMax = "Max: " + appBridge.JsonData.weather[1].maxtempC;
             weather1.tempAvg = "Avg: " + appBridge.JsonData.weather[1].avgtempC;
-            weather1.conditinAtTime = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC + ")"
+            weather1.conditionAtTime = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC + ")"
             //weather1.tempFeels = "Feels: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC;
             weather1.rain = "Rain: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].chanceofrain;
             weather1.humidity = "H: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].humidity;
@@ -247,7 +248,7 @@ Window {
             weather2.tempMin = "Min: " + appBridge.JsonData.weather[2].mintempC;
             weather2.tempMax = "Max: " + appBridge.JsonData.weather[2].maxtempC;
             weather2.tempAvg = "Avg: " + appBridge.JsonData.weather[2].avgtempC;
-            weather2.conditinAtTime = appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].FeelsLikeC + ")"
+            weather2.conditionAtTime = appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].FeelsLikeC + ")"
             //weather2.tempFeels = "Feels: " + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].FeelsLikeC;
             weather2.rain = "Rain: " + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].chanceofrain;
             weather2.humidity = "H: " + appBridge.JsonData.weather[2].hourly[weather2.getHourIndex()].humidity ;

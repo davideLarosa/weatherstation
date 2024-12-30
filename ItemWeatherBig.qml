@@ -3,7 +3,7 @@ import QtQuick
 Rectangle {
     id: forecast
     property string feelsLike: "-"
-    property string tempCurr: "Current Temp: --.- (-)"
+    property string tempCurr: "--.- (-)"
     property string unit: " °C"
     property string tempFeels: "Feels Like: --.-"
     property string tempMin: "L: --.-"
@@ -15,7 +15,6 @@ Rectangle {
     property string windPercent: "- %"
     property string windKmH: "- km/h"
     property string condition: "-"
-    property string conditinAtTime: "-"
     property real scaleFactor: 1.0
     property real textSize: 20
 
@@ -155,11 +154,40 @@ Rectangle {
         width: 437
         color: "transparent"
 
-        Row {
-            id: rowTempMinAvgMax
-            width: parent.width
-            anchors.top: parent.top
+        Column {
+            id: colCurrentTemp
+            //width: parent.width
             anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+
+            Text {
+                id: txtCurrentTemp
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize+20
+                color: "white"
+                text: forecast.tempCurr + forecast.unit
+                horizontalAlignment: Text.AlignHCenter
+            }
+            Text {
+                id: txtCurrentCondition
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.left: parent.left
+                horizontalAlignment: Text.AlignHCenter
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize+20
+                color: "white"
+                text: forecast.condition
+            }
+        }
+
+        Column {
+            id: colTempMinAvgMax
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.rightMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
 
             Text {
                 id: txtTempMin
@@ -185,22 +213,6 @@ Rectangle {
                 font.pointSize: forecast.textSize+5
                 color: "#fb5255"
                 text: forecast.tempMax + forecast.unit
-            }
-        }
-
-        Row {
-            id: rowCurrentTemp
-            //width: parent.width
-            anchors.top: rowTempMinAvgMax.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            Text {
-                id: txtCurrentTemp
-                font.family: fontc059Bold.name
-                font.bold: true
-                font.pointSize: forecast.textSize+20
-                color: "white"
-                text: forecast.tempCurr + forecast.unit
             }
         }
     }
