@@ -14,6 +14,7 @@ Rectangle {
     property string condition: "-"
     property string conditinAtTime: "-"
     property real scaleFactor: 1.0
+    property real textSize: 20
 
     color: "transparent"
 
@@ -58,7 +59,7 @@ Rectangle {
         height: parent.height
         anchors.left: parent.left
         anchors.top: parent.top
-        color: "yellow"
+        color: "transparent"
 
         Image {
             id: imgWeather
@@ -72,6 +73,7 @@ Rectangle {
     Rectangle {
         id: bigWCenter
         anchors.left: bigWLeft.right
+        anchors.top: parent.top
         width: 437
         height: parent.height
         color: "blue"
@@ -83,7 +85,7 @@ Rectangle {
             anchors.top: parent.top
             font.family: fontc059Bold.name
             font.bold: true
-            font.pointSize: 25
+            font.pointSize: forecast.textSize
             color: "white"
             text: forecast.tempCurr + forecast.unit
         } 
@@ -94,7 +96,7 @@ Rectangle {
             anchors.top: txtCurrentTemp.bottom
             font.family: fontc059Bold.name
             font.bold: true
-            font.pointSize: 25
+            font.pointSize: forecast.textSize
             color: "white"
             text: forecast.tempFeels + forecast.unit
         } 
@@ -103,6 +105,7 @@ Rectangle {
     Rectangle {
         id: bigWRight
         anchors.left: bigWCenter.right
+        anchors.top: parent.top
         height: parent.height
         width: 437
         color: "red"

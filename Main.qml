@@ -7,6 +7,7 @@ Window {
     visible: true
     visibility: Window.FullScreen
     title: qsTr("Raspi Weather")
+    color: "#233343"
 
 
     // Fonts
@@ -59,7 +60,7 @@ Window {
             id: rectTime
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: 25
+            anchors.topMargin: 15
             width: parent.width
             height: 140
             color: "transparent"
@@ -82,6 +83,7 @@ Window {
             width: parent.width
             height: 90
             color: "transparent"
+
             Text {
                 id: date
                 text: qsTr("-- -- ----")
@@ -105,7 +107,7 @@ Window {
         visible: true
     }
 
-    // middle rectangle for today weather
+    // central line for today weather
     Rectangle {
         id: rectWeather0
         width: parent.width
@@ -113,7 +115,7 @@ Window {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: recW0horizontalLine.bottom
         anchors.left: parent.left
-        color: "red"
+        color: "transparent"
 
         //Today Weather
         ItemWeatherBig {
