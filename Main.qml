@@ -143,7 +143,7 @@ Window {
         width: parent.width
         height: 220
         anchors.top: rectWeather0.bottom
-        color: "blue"
+        color: "violet"
 
     //     // Additions
     //     Rectangle {
@@ -217,8 +217,9 @@ Window {
             //Today
             weather0.tempMin = "Min: " + appBridge.JsonData.weather[0].mintempC;
             weather0.tempMax = "Max: " + appBridge.JsonData.weather[0].maxtempC;
-            weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C;
-            weather0.tempFeels = "Feels like: " + appBridge.JsonData.current_condition[0].FeelsLikeC;
+            //weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C;
+            //weather0.tempFeels = "Feels like: " + appBridge.JsonData.current_condition[0].FeelsLikeC;
+            weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C + " (" + appBridge.JsonData.current_condition[0].FeelsLikeC + ")";
             weather0.setIcon(appBridge.JsonData.current_condition[0].weatherCode)
 
             // // //Today + 1

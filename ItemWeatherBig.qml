@@ -3,7 +3,7 @@ import QtQuick
 Rectangle {
     id: forecast
     property string feelsLike: "-"
-    property string tempCurr: "Current Temp: --.-"
+    property string tempCurr: "Current Temp: --.- (-)"
     property string unit: " °C"
     property string tempFeels: "Feels Like: --.-"
     property string tempMin: "Min: --.-"
@@ -88,18 +88,19 @@ Rectangle {
             font.pointSize: forecast.textSize
             color: "white"
             text: forecast.tempCurr + forecast.unit
-        } 
+        }
 
-        Text {
-            id: txtFeelsLike
-            width: parent.width
-            anchors.top: txtCurrentTemp.bottom
-            font.family: fontc059Bold.name
-            font.bold: true
-            font.pointSize: forecast.textSize
-            color: "white"
-            text: forecast.tempFeels + forecast.unit
-        } 
+//TODO: decide if to use it or not
+//        Text {
+//            id: txtFeelsLike
+//            width: parent.width
+//            anchors.top: txtCurrentTemp.bottom
+//            font.family: fontc059Bold.name
+//            font.bold: true
+//            font.pointSize: forecast.textSize
+//            color: "white"
+//            text: forecast.tempFeels + forecast.unit
+//        }
     }
 
     Rectangle {
