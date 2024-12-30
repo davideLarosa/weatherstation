@@ -223,7 +223,9 @@ Window {
             weather0.tempCurr = "Current Temp: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].FeelsLikeC + ")"
             weather0.humidity = "Humidity: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].humidity;
             weather0.rainPercent = "Rain: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofrain;
-            weather0.rainMm = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].precipMM; 
+            weather0.rainMm = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].precipMM;
+            weather0.windPercent = "Wind: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofwindy;
+            weather0.windKmH = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].windspeedKmph;
             weather0.setIcon(appBridge.JsonData.current_condition[0].weatherCode)
 
             // //Today + 1

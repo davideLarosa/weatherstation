@@ -12,6 +12,8 @@ Rectangle {
     property string rainPercent: "Rain: -"
     property string rainMm: "- %"
     property string humidity: "Humidity: -"
+    property string windPercent: "- %"
+    property string windKmH: "- km/h"
     property string condition: "-"
     property string conditinAtTime: "-"
     property real scaleFactor: 1.0
@@ -56,27 +58,11 @@ Rectangle {
 
     Rectangle {
         id: bigWLeft
-        width: 150
-        height: parent.height
-        anchors.left: parent.left
-        anchors.top: parent.top
-        color: "transparent"
-
-        Image {
-            id: imgWeather
-            anchors.left: parent.left
-            anchors.leftMargin: 30
-            anchors.verticalCenter: parent.verticalCenter
-            source: "qrc:/images/113.png"
-            scale: forecast.scaleFactor
-        }
-    }
-    Rectangle {
-        id: bigWCenter
-        anchors.left: bigWLeft.right
-        anchors.top: parent.top
         width: 437
         height: parent.height
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.top: parent.top
         color: "transparent"
 
         Row {
@@ -94,19 +80,6 @@ Rectangle {
                 text: forecast.tempCurr + forecast.unit
             }
         }
-
-        //TODO: decide if to use it or not
-        //        Text {
-        //            id: txtFeelsLike
-        //            width: parent.width
-        //            anchors.top: txtCurrentTemp.bottom
-        //            font.family: fontc059Bold.name
-        //            font.bold: true
-        //            font.pointSize: forecast.textSize
-        //            color: "white"
-        //            text: forecast.tempFeels + forecast.unit
-        //        }
-
 
         Row {
             id: rowHumidity
@@ -146,22 +119,30 @@ Rectangle {
                 text: forecast.rainMm + "mm"
             }
         }
-        //Text {
-        //    id: txtWind
-        //    width: parent.width
-        //    anchors.left: parent.left
-        //    anchors.top: txtMin.bottom
-        //    font.family: fontc059Bold.name
-        //    font.bold: true
-        //    font.pointSize: forecast.textSize
-        //    color: "white"
-        //    text: forecast.wind + "km/h"
-        //}
+    }
+
+    Rectangle {
+        id: bigWCenter
+        //anchors.left: bigWLeft.right
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        width: 140
+        height: parent.height
+        color: "transparent"
+
+        Image {
+            id: imgWeather
+            anchors.left: parent.left
+        //    anchors.leftMargin: 30
+            anchors.verticalCenter: parent.verticalCenter
+            source: "qrc:/images/113.png"
+            scale: forecast.scaleFactor
+        }
     }
 
     Rectangle {
         id: bigWRight
-        anchors.left: bigWCenter.right
+        anchors.right: parent.right
         anchors.top: parent.top
         height: parent.height
         width: 437
@@ -197,6 +178,29 @@ Rectangle {
                 font.pointSize: forecast.textSize
                 color: "#fb5255"
                 text: forecast.tempMax + forecast.unit
+            }
+        }
+
+        Row {
+            id: rowWind
+            anchors.top: rowTempMinAvgMax.bottom
+            anchors.left: parent.left
+
+            Text {
+                id: txtWindPecent
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.windPercent + "%  "
+            }
+            Text {
+                id: txtWindKmH
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.windKm + "km/h"
             }
         }
 
