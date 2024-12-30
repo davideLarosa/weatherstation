@@ -1,11 +1,11 @@
-import QtQuick 2.0
+import QtQuick
 
 Rectangle {
     id: forecast
     property string feelsLike: "-"
-    property string tempCurr: "Curr: --.-"
+    property string tempCurr: "Current Temp: --.-"
     property string unit: " °C"
-    property string tempFeels: "Feels: --.-"
+    property string tempFeels: "Feels Like: --.-"
     property string tempMin: "Min: --.-"
     property string tempMax: "Max: --.-"
     property string tempAvg: "Avg: --.-"
@@ -13,7 +13,6 @@ Rectangle {
     property string humidity: "H: -"
     property string condition: "-"
     property string conditinAtTime: "-"
-    property bool lineVisible: true
     property real scaleFactor: 1.0
 
     color: "transparent"
@@ -54,21 +53,60 @@ Rectangle {
     }
 
     Rectangle {
-        id: rectImage
-        width: parent.width
+        id: bigWLeft
+        width: 150
         height: parent.height
         anchors.left: parent.left
         anchors.top: parent.top
-        color: "transparent"
+        color: "yellow"
 
         Image {
             id: imgWeather
             anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.topMargin: 15
             anchors.leftMargin: 30
+            anchors.verticalCenter: parent.verticalCenter
             source: "qrc:/images/113.png"
             scale: forecast.scaleFactor
         }
+    }
+    Rectangle {
+        id: bigWCenter
+        anchors.left: bigWLeft.right
+        width: 874
+        height: parent.height
+        color: "blue"
+
+        Text {
+            id: txtCurrentTemp
+            width: parent.width
+            height: parent.height
+            anchors.left: parent.left
+            anchors.top: parent.top
+            font.family: fontc059Bold.name
+            font.bold: true
+            font.pointSize: 25
+            color: "white"
+            text: forecast.tempCurr + forecast.unit
+        } 
+
+        Text {
+            id: txtFeelsLike
+            width: parent.width
+            anchors.left: parent.left
+            anchors.top: txtCurrentTemp.bottom
+            font.family: fontc059Bold.name
+            font.bold: true
+            font.pointSize: 25
+            color: "red"
+            text: forecast.tempFeels + forecast.unit
+        } 
+    }
+
+    Rectangle {
+        id: bigWRight
+        anchors.left: bigWCenter.right
+        height: parent.height
+        width: 874
+        color: "red"
     }
 }

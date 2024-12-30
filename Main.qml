@@ -93,54 +93,56 @@ Window {
         }
     }
 
+    // draw a white line
+    Rectangle {
+        id: recW0horizontalLine
+        height: 1
+        width: mainWindow.width
+        anchors.top: rectDateTime.bottom
+        anchors.horizontalCenter: rectDateTime.horizontalCenter
+        border.width: 1
+        border.color: "white"
+        visible: true
+    }
+
     // middle rectangle for today weather
     Rectangle {
         id: rectWeather0
         width: parent.width
         height: 140
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: rectDateTime.bottom
+        anchors.top: recW0horizontalLine.bottom
         anchors.left: parent.left
         color: "red"
-
-        Rectangle {
-            id: recW0horizontalLine
-            height: 1
-            width: parent.width
-            anchors.left: parent.left
-            border.width: 1
-            border.color: "white"
-            visible: true
-        }
 
         //Today Weather
         ItemWeatherBig {
             id: weather0
             height: parent.height
             width: parent.width
-            anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             scaleFactor: 3.5
-            lineVisible: false
         }
     }
 
-    Rectangle {
+        Rectangle {
+            id: recAddWhorizontalLine
+            height: 1
+            anchors.top: rectWeather0.bottom
+            width: parent.width
+            border.width: 1
+            border.color: "white"
+            visible: true
+        }
+
+   Rectangle {
         id: rectAdditionaWeather
         width: parent.width
         height: 220
         anchors.top: rectWeather0.bottom
         color: "blue"
 
-        Rectangle {
-            id: recAddWhorizontalLine
-            height: 1
-            width: parent.width
-            border.width: 1
-            border.color: "white"
-            visible: true
-        }
     //     // Additions
     //     Rectangle {
     //         id: lower_line
@@ -213,7 +215,8 @@ Window {
             //Today
             weather0.tempMin = "Min: " + appBridge.JsonData.weather[0].mintempC;
             weather0.tempMax = "Max: " + appBridge.JsonData.weather[0].maxtempC;
-            weather0.tempCurr = "Curr: " + appBridge.JsonData.current_condition[0].temp_C + " (" + appBridge.JsonData.current_condition[0].FeelsLikeC + ")";
+            weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C;
+            weather0.tempFeels = "Feels like: " + appBridge.JsonData.current_condition[0].FeelsLikeC;
             weather0.setIcon(appBridge.JsonData.current_condition[0].weatherCode)
 
             // // //Today + 1
