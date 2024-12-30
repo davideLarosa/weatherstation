@@ -22,6 +22,8 @@ qt_add_qml_module(appWeatherStation
     RESOURCES resources.qrc
     QML_FILES ItemWeatherSmall.qml
     QML_FILES ItemWeatherBig.qml
+    QML_FILES VerticalLine.qml
+    QML_FILES HorizontalLine.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
