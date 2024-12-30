@@ -67,7 +67,7 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.leftMargin: 10
             source: "qrc:/images/113.png"
-            //scale: forecast.scaleFactor
+            scale: forecast.scaleFactor
         }
     }
 }
