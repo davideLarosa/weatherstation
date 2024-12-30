@@ -9,8 +9,9 @@ Rectangle {
     property string tempMin: "Min: --.-"
     property string tempMax: "Max: --.-"
     property string tempAvg: "Avg: --.-"
-    property string rain: "Rain: -"
-    property string humidity: "H: -"
+    property string rainPercent: "Rain: -"
+    property string rainMm: "- %"
+    property string humidity: "Hum: -"
     property string condition: "-"
     property string conditinAtTime: "-"
     property real scaleFactor: 1.0
@@ -76,18 +77,22 @@ Rectangle {
         anchors.top: parent.top
         width: 437
         height: parent.height
-        color: "blue"
+        color: "transparent"
 
-        Text {
-            id: txtCurrentTemp
+        Row {
+            id: rowCurrentTemp
             width: parent.width
             anchors.left: parent.left
             anchors.top: parent.top
-            font.family: fontc059Bold.name
-            font.bold: true
-            font.pointSize: forecast.textSize
-            color: "white"
-            text: forecast.tempCurr + forecast.unit
+
+            Text {
+                id: txtCurrentTemp
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.tempCurr + forecast.unit
+            }
         }
 
 //TODO: decide if to use it or not
@@ -104,9 +109,9 @@ Rectangle {
 
 
         Row {
-            id: rowTempMinMax
+            id: rowTempMinAvgMax
             width: parent.width
-            anchors.top: txtCurrentTemp.bottom
+            anchors.top: rowCurrentTemp.bottom
             anchors.left: parent.left
 
             Text {
@@ -115,10 +120,15 @@ Rectangle {
                 font.bold: true
                 font.pointSize: forecast.textSize
                 color: "#3ecdfd"
-                text: forecast.tempMin + forecast.unit
+                text: forecast.tempMin + forecast.unit + "  "
             }
             Text {
-                text: "\t"
+                id: txtTempAvg
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "#ffffff"
+                text: forecast.tempAvg + forecast.unit + "  "
             }
 
             Text {
@@ -128,6 +138,45 @@ Rectangle {
                 font.pointSize: forecast.textSize
                 color: "#fb5255"
                 text: forecast.tempMax + forecast.unit
+            }
+        }
+
+        Row {
+            id: rowHumidity
+            anchors.top: rowTempMinAvgMax.bottom
+            anchors.left: parent.left
+
+            Text {
+                id: txtHumidity
+                font.family: fontc059Bold
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.humidity + "%"
+            }
+        }
+
+        Row {
+            id: rowRain
+            anchors.top: rowHumidity.bottom
+            anchors.left: parent.left
+    
+            Text {
+                id: txtRainPercent
+                font.family: fontc059Bold
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.rainPercent + "%  "
+            }
+
+            Text {
+                id: txtRainMm
+                font.family: fontc059Bold
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.rainMm + "mm"
             }
         }
         //Text {
