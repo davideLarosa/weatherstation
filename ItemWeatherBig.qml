@@ -65,7 +65,7 @@ Rectangle {
             id: imgWeather
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.topMargin: 10
+            anchors.topMargin: 15
             anchors.leftMargin: 30
             source: "qrc:/images/113.png"
             scale: forecast.scaleFactor

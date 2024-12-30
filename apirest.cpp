@@ -40,10 +40,12 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
 
     QString filename = "/tmp/weatherStation.log";
     QFile file(filename);
-    if (file.open(QIODevice::ReadWrite)) {
+    if (file.open(QIODevice::Append | QIODevide::Text)) {
         QTextStream stream(&file);
         stream << logString << Qt::endl;
+        file.close();
+    } else {
+        qDebug() << "Cannot open destination log fine";
     }
-    file.close();
 }
 
