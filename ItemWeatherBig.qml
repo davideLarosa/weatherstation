@@ -70,7 +70,7 @@ Rectangle {
         height: parent.height
         color: "transparent"
         anchors.left: parent.left
-        anchots.top: parent.top
+        anchors.top: parent.top
 
         Image {
             id: imgWeather
