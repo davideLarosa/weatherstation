@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     QTimer timer;
     QObject::connect(&timer, &QTimer::timeout, &apirest, &ApiRest::restApiRequest);
-    timer.start(3600000);
+    timer.start(600000);
 
     return app.exec();
 }

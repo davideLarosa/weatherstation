@@ -101,6 +101,46 @@ Rectangle {
 //            color: "white"
 //            text: forecast.tempFeels + forecast.unit
 //        }
+
+
+        Row {
+            id: rowTempMinMax
+            width: parent.width
+            anchors.top: txtCurrentTemp.bottom
+            anchors.left: parent.left
+
+            Text {
+                id: txtTempMin
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "#3ecdfd"
+                text: forecast.tempMin + forecast.unit
+            }
+            Text {
+                text: "\t"
+            }
+
+            Text {
+                id: txtTempMax
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "#fb5255"
+                text: forecast.tempMax + forecast.unit
+            }
+        }
+        //Text {
+        //    id: txtWind
+        //    width: parent.width
+        //    anchors.left: parent.left
+        //    anchors.top: txtMin.bottom
+        //    font.family: fontc059Bold.name
+        //    font.bold: true
+        //    font.pointSize: forecast.textSize
+        //    color: "white"
+        //    text: forecast.wind + "km/h"
+        //}
     }
 
     Rectangle {
