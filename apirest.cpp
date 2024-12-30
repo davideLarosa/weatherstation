@@ -1,6 +1,7 @@
 #include "apirest.h"
 #include <QFile>
 #include <QDateTime>
+#include <QTextStream>
 
 ApiRest::ApiRest(QObject *parent)
     : QObject{parent}
