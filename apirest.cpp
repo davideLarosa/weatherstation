@@ -41,7 +41,7 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
     QFile file(filename);
     if (file.open(QIODevice::ReadWrite)) {
         QTextStream stream(&file);
-        stream << logString << endl;
+        stream << logString << QTextStream::endl;
     }
 }
 
