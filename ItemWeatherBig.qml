@@ -11,7 +11,7 @@ Rectangle {
     property string tempAvg: "Avg: --.-"
     property string rainPercent: "Rain: -"
     property string rainMm: "- %"
-    property string humidity: "Hum: -"
+    property string humidity: "Humidity: -"
     property string condition: "-"
     property string conditinAtTime: "-"
     property real scaleFactor: 1.0
@@ -95,23 +95,82 @@ Rectangle {
             }
         }
 
-//TODO: decide if to use it or not
-//        Text {
-//            id: txtFeelsLike
-//            width: parent.width
-//            anchors.top: txtCurrentTemp.bottom
-//            font.family: fontc059Bold.name
-//            font.bold: true
-//            font.pointSize: forecast.textSize
-//            color: "white"
-//            text: forecast.tempFeels + forecast.unit
-//        }
+        //TODO: decide if to use it or not
+        //        Text {
+        //            id: txtFeelsLike
+        //            width: parent.width
+        //            anchors.top: txtCurrentTemp.bottom
+        //            font.family: fontc059Bold.name
+        //            font.bold: true
+        //            font.pointSize: forecast.textSize
+        //            color: "white"
+        //            text: forecast.tempFeels + forecast.unit
+        //        }
 
+
+        Row {
+            id: rowHumidity
+            anchors.top: rowCurrentTemp.bottom
+            anchors.left: parent.left
+
+            Text {
+                id: txtHumidity
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.humidity + "%"
+            }
+        }
+
+        Row {
+            id: rowRain
+            anchors.top: rowHumidity.bottom
+            anchors.left: parent.left
+    
+            Text {
+                id: txtRainPercent
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.rainPercent + "%  "
+            }
+
+            Text {
+                id: txtRainMm
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.rainMm + "mm"
+            }
+        }
+        //Text {
+        //    id: txtWind
+        //    width: parent.width
+        //    anchors.left: parent.left
+        //    anchors.top: txtMin.bottom
+        //    font.family: fontc059Bold.name
+        //    font.bold: true
+        //    font.pointSize: forecast.textSize
+        //    color: "white"
+        //    text: forecast.wind + "km/h"
+        //}
+    }
+
+    Rectangle {
+        id: bigWRight
+        anchors.left: bigWCenter.right
+        anchors.top: parent.top
+        height: parent.height
+        width: 437
+        color: "transparent"
 
         Row {
             id: rowTempMinAvgMax
             width: parent.width
-            anchors.top: rowCurrentTemp.bottom
+            anchors.top: parent.top
             anchors.left: parent.left
 
             Text {
@@ -141,63 +200,5 @@ Rectangle {
             }
         }
 
-        Row {
-            id: rowHumidity
-            anchors.top: rowTempMinAvgMax.bottom
-            anchors.left: parent.left
-
-            Text {
-                id: txtHumidity
-                font.family: fontc059Bold
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "white"
-                text: forecast.humidity + "%"
-            }
-        }
-
-        Row {
-            id: rowRain
-            anchors.top: rowHumidity.bottom
-            anchors.left: parent.left
-    
-            Text {
-                id: txtRainPercent
-                font.family: fontc059Bold
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "white"
-                text: forecast.rainPercent + "%  "
-            }
-
-            Text {
-                id: txtRainMm
-                font.family: fontc059Bold
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "white"
-                text: forecast.rainMm + "mm"
-            }
-        }
-        //Text {
-        //    id: txtWind
-        //    width: parent.width
-        //    anchors.left: parent.left
-        //    anchors.top: txtMin.bottom
-        //    font.family: fontc059Bold.name
-        //    font.bold: true
-        //    font.pointSize: forecast.textSize
-        //    color: "white"
-        //    text: forecast.wind + "km/h"
-        //}
-    }
-
-    Rectangle {
-        id: bigWRight
-        anchors.left: bigWCenter.right
-        anchors.top: parent.top
-        height: parent.height
-        width: 437
-        color: "red"
     }
 }

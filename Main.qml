@@ -154,25 +154,25 @@ Window {
     //         anchors.bottom: parent.bottom
     //         color: "transparent"
 
-    //         Rectangle {
-    //             id: lower_line_left
-    //             anchors.verticalCenter: parent.verticalCenter
-    //             anchors.bottom: parent.bottom
-    //             anchors.left: parent.left
-    //             height: parent.height
-    //             width: parent.width/2
-    //             color: "transparent"
+             Rectangle {
+                 id: lower_line_left
+                 anchors.verticalCenter: parent.verticalCenter
+                 anchors.bottom: parent.bottom
+                 anchors.left: parent.left
+                 height: parent.height
+                 width: parent.width/2
+                 color: "transparent"
 
-    //             ItemWeatherSmall {
-    //                 id: weather1
-    //                 width: parent.width
-    //                 height: parent.height
-    //                 anchors.verticalCenter: parent.verticalCenter
-    //                 anchors.left: parent.left
-    //                 dayOfWeek: qsTr("--")
-    //                 lineVisible: false
-    //             }
-    //         }
+                 ItemWeatherSmall {
+                     id: weather1
+                     width: parent.width
+                     height: parent.height
+                     anchors.verticalCenter: parent.verticalCenter
+                     anchors.left: parent.left
+                     dayOfWeek: qsTr("--")
+                     lineVisible: false
+                 }
+             }
 
     //         Rectangle {
     //             id: lower_line_right
@@ -221,23 +221,23 @@ Window {
             //weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C;
             //weather0.tempFeels = "Feels like: " + appBridge.JsonData.current_condition[0].FeelsLikeC;
             weather0.tempCurr = "Current Temp: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].FeelsLikeC + ")"
-            weather0.humidity = "Hum: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].humidity;
+            weather0.humidity = "Humidity: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].humidity;
             weather0.rainPercent = "Rain: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofrain;
             weather0.rainMm = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].precipMM; 
             weather0.setIcon(appBridge.JsonData.current_condition[0].weatherCode)
 
-            // // //Today + 1
-            // var date = new Date(appBridge.JsonData.weather[1].date);
-            // weather1.dayOfWeek = Qt.formatDateTime(date, "dddd");
-            // weather1.tempMin = "Min: " + appBridge.JsonData.weather[1].mintempC;
-            // weather1.tempMax = "Max: " + appBridge.JsonData.weather[1].maxtempC;
-            // weather1.tempAvg = "Avg: " + appBridge.JsonData.weather[1].avgtempC;
-            // weather1.conditinAtTime = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC + ")"
-            // //weather1.tempFeels = "Feels: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC;
-            // weather1.rain = "Rain: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].chanceofrain;
-            // weather1.humidity = "H: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].humidity;
-            // weather1.condition = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].weatherDesc[0].value;
-            // weather1.setIcon(appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].weatherCode)
+            // //Today + 1
+            var date = new Date(appBridge.JsonData.weather[1].date);
+            weather1.dayOfWeek = Qt.formatDateTime(date, "dddd");
+            weather1.tempMin = "Min: " + appBridge.JsonData.weather[1].mintempC;
+            weather1.tempMax = "Max: " + appBridge.JsonData.weather[1].maxtempC;
+            weather1.tempAvg = "Avg: " + appBridge.JsonData.weather[1].avgtempC;
+            weather1.conditinAtTime = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC + ")"
+            //weather1.tempFeels = "Feels: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].FeelsLikeC;
+            weather1.rain = "Rain: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].chanceofrain;
+            weather1.humidity = "H: " + appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].humidity;
+            weather1.condition = appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].weatherDesc[0].value;
+            weather1.setIcon(appBridge.JsonData.weather[1].hourly[weather1.getHourIndex()].weatherCode)
 
             // // //Today + 2
             // var date = new Date(appBridge.JsonData.weather[2].date);
