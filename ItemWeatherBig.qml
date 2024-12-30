@@ -6,9 +6,9 @@ Rectangle {
     property string tempCurr: "Current Temp: --.- (-)"
     property string unit: " °C"
     property string tempFeels: "Feels Like: --.-"
-    property string tempMin: "Min: --.-"
-    property string tempMax: "Max: --.-"
-    property string tempAvg: "Avg: --.-"
+    property string tempMin: "L: --.-"
+    property string tempMax: "H: --.-"
+    property string tempAvg: "A: --.-"
     property string rainPercent: "Rain: -"
     property string rainMm: "- %"
     property string humidity: "Humidity: -"
@@ -66,22 +66,6 @@ Rectangle {
         color: "transparent"
 
         Row {
-            id: rowCurrentTemp
-            width: parent.width
-            anchors.left: parent.left
-            anchors.top: parent.top
-
-            Text {
-                id: txtCurrentTemp
-                font.family: fontc059Bold.name
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "white"
-                text: forecast.tempCurr + forecast.unit
-            }
-        }
-
-        Row {
             id: rowHumidity
             anchors.top: rowCurrentTemp.bottom
             anchors.left: parent.left
@@ -117,6 +101,29 @@ Rectangle {
                 font.pointSize: forecast.textSize
                 color: "white"
                 text: forecast.rainMm + "mm"
+            }
+        }
+
+        Row {
+            id: rowWind
+            anchors.top: rowRain.bottom
+            anchors.left: parent.left
+
+            Text {
+                id: txtWindPecent
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.windPercent + "%  "
+            }
+            Text {
+                id: txtWindKmH
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "white"
+                text: forecast.windKmH + "km/h"
             }
         }
     }
@@ -158,7 +165,7 @@ Rectangle {
                 id: txtTempMin
                 font.family: fontc059Bold.name
                 font.bold: true
-                font.pointSize: forecast.textSize
+                font.pointSize: forecast.textSize+5
                 color: "#3ecdfd"
                 text: forecast.tempMin + forecast.unit + "  "
             }
@@ -166,7 +173,7 @@ Rectangle {
                 id: txtTempAvg
                 font.family: fontc059Bold.name
                 font.bold: true
-                font.pointSize: forecast.textSize
+                font.pointSize: forecast.textSize+5
                 color: "#ffffff"
                 text: forecast.tempAvg + forecast.unit + "  "
             }
@@ -175,34 +182,26 @@ Rectangle {
                 id: txtTempMax
                 font.family: fontc059Bold.name
                 font.bold: true
-                font.pointSize: forecast.textSize
+                font.pointSize: forecast.textSize+5
                 color: "#fb5255"
                 text: forecast.tempMax + forecast.unit
             }
         }
 
         Row {
-            id: rowWind
+            id: rowCurrentTemp
+            //width: parent.width
             anchors.top: rowTempMinAvgMax.bottom
-            anchors.left: parent.left
+            anchors.horizontalCenter: parent.horizontalCenter
 
             Text {
-                id: txtWindPecent
+                id: txtCurrentTemp
                 font.family: fontc059Bold.name
                 font.bold: true
-                font.pointSize: forecast.textSize
+                font.pointSize: forecast.textSize+20
                 color: "white"
-                text: forecast.windPercent + "%  "
-            }
-            Text {
-                id: txtWindKmH
-                font.family: fontc059Bold.name
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "white"
-                text: forecast.windKmH + "km/h"
+                text: forecast.tempCurr + forecast.unit
             }
         }
-
     }
 }

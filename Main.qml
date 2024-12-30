@@ -215,12 +215,12 @@ Window {
         target: appBridge
         function onDataChanged() {
             //Today
-            weather0.tempMin = "Min: " + appBridge.JsonData.weather[0].mintempC;
-            weather0.tempMax = "Max: " + appBridge.JsonData.weather[0].maxtempC;
-            weather0.tempAvg = "Avg: " + appBridge.JsonData.weather[0].avgtempC;
+            weather0.tempMin = "L: " + appBridge.JsonData.weather[0].mintempC;
+            weather0.tempMax = "H: " + appBridge.JsonData.weather[0].maxtempC;
+            weather0.tempAvg = "A: " + appBridge.JsonData.weather[0].avgtempC;
             //weather0.tempCurr = "Current Temp: " + appBridge.JsonData.current_condition[0].temp_C;
             //weather0.tempFeels = "Feels like: " + appBridge.JsonData.current_condition[0].FeelsLikeC;
-            weather0.tempCurr = "Current Temp: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].FeelsLikeC + ")"
+            weather0.tempCurr = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].tempC + " (" + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].FeelsLikeC + ")"
             weather0.humidity = "Humidity: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].humidity;
             weather0.rainPercent = "Rain: " + appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].chanceofrain;
             weather0.rainMm = appBridge.JsonData.weather[0].hourly[weather0.getHourIndex()].precipMM;
