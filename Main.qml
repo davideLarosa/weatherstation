@@ -100,12 +100,14 @@ Window {
         height: 140
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: rectDateTime.bottom
+        anchors.left: parent.left
         color: "red"
 
         Rectangle {
             id: recW0horizontalLine
             height: 1
             width: parent.width
+            anchors.left: parent.left
             border.width: 1
             border.color: "white"
             visible: true
