@@ -200,7 +200,7 @@ Rectangle {
                 font.bold: true
                 font.pointSize: forecast.textSize
                 color: "white"
-                text: forecast.windKm + "km/h"
+                text: forecast.windKmH + "km/h"
             }
         }
 
