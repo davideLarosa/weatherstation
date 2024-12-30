@@ -2,7 +2,6 @@ import QtQuick
 
 Item {
     property string visible: "true"
-
     id: item
 
     Rectangle {

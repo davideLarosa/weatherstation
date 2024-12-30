@@ -102,6 +102,13 @@ Window {
         anchors.top: rectDateTime.bottom
         color: "red"
 
+        HorizontalLine {
+            id: recW0HorizontalLine
+            width: parent.width
+            height: 1
+            visible: "true"
+        }
+
         //Today Weather
         ItemWeatherBig {
             id: weather0
@@ -120,6 +127,13 @@ Window {
         height: 220
         anchors.top: rectWeather0.bottom
         color: "blue"
+
+        HorizontalLine {
+            id: recAddWHorizontalLine
+            width: parent.width
+            height: 1
+            visible: "true"
+        }
 
     //     // Additions
     //     Rectangle {

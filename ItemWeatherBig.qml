@@ -54,17 +54,6 @@ Rectangle {
     }
 
     Rectangle {
-        id: verticalLine
-        height: 1
-        width: parent.width
-        anchors.top: parent.top
-        border.width: 1
-        border.color: "white"
-        visible: forecast.lineVisible
-
-    }
-
-    Rectangle {
         id: rectImage
         width: parent.width
         height: 140
