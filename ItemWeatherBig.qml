@@ -26,7 +26,7 @@ Rectangle {
         let code=0;
         let curTime = new Date().getHours()*100;
 
-        if (curTime >= 0 && curTime < 300) {
+        if (curTime >= 1 && curTime < 300) {
             code=0
         }
         else if (curTime >= 300 && curTime < 600) {
@@ -58,18 +58,27 @@ Rectangle {
         height: 1
         width: parent.width
         anchors.verticalCenter: parent.verticalCenter
-        anchors.right: parent.right
+        anchors.top: parent.top
         border.width: 1
         border.color: "white"
         visible: forecast.lineVisible
     }
 
-    Image {
-        id: imgWeather
+    Rectangle {
+        id: rectImage
+        width: parent.width
+        height: parent.height
+        color: "transparent"
         anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.leftMargin: 15
-        source: "qrc:/images/113.png"
-        scale: forecast.scaleFactor
+        anchots.top: parent.top
+
+        Image {
+            id: imgWeather
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.leftMargin: 10
+            source: "qrc:/images/113.png"
+            scale: forecast.scaleFactor
+        }
     }
 }
