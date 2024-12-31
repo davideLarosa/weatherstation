@@ -15,6 +15,7 @@ Rectangle {
     property string conditionAtTime: "-"
     property bool lineVisible: true
     property real scaleFactor: 1.0
+    property real textSize: 20
 
     color: "transparent"
 
@@ -54,68 +55,79 @@ Rectangle {
     }
 
     Rectangle {
-        id: mainRectangle
+        id: dayOfWeek
         width: parent.width
-        height: parent.height
+        height: 35
         color: "transparent"
 
-        Rectangle {
-            id: dayOfWeek
+        Text {
+            id: txtDayOfWeek
             width: parent.width
-            height: 25
-            color: "transparent"
-
-            Text {
-                id: txtDayOfWeek
-                width: parent.width
-                color: "#FA9727"
-                font.bold: true
-                font.pointSize: 25
-                font.family: fontc059Bold.name
-                horizontalAlignment: Text.AlignHCenter
-                text: forecast.dayOfWeek
-            }
+            color: "#FA9727"
+            font.bold: true
+            font.pointSize: forecast.textSize
+            font.family: fontc059Bold.name
+            horizontalAlignment: Text.AlignHCenter
+            text: forecast.dayOfWeek
         }
-
-        Rectangle {
-            id: rectLeft
-            color: "transparent"
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-
-            Image {
-                id: imgWeather
-                //anchors.verticalCenter: recImgWeather.verticalCenter
-                source: "qrc:/images/113.png"
-                scale: forecast.scaleFactor
-            }
-        }
-
-//TODO: center this text
-        Rectangle {
-            id: rectCenter
-            color: "transparent"
-            width: parent.width
-
-            Column {
-                id: colRectCenter
-                Text {
-                    id: txtCondition
-                    color: "#ffffff"
-                    font.bold: true
-                    font.pointSize: 13
-                    font.family: fontc059Bold.name
-                    text: forecast.condition
-                }
-            }
-        }
-
-        Rectangle {
-            id: rectRight
-            color: "transparent"
-        }
-
     }
+
+    Rectangle {
+        id: rectImage
+        //anchors.left: parent.left
+        height: parent.height - dayOfWeek.height
+        anchors.top: dayOfWeek.bottom
+        width: 130
+        color: "transparent"
+
+        Image {
+            id: imgWeather
+            anchors.top: parent.top
+            anchors.topMargin: 30
+            //anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            source: "qrc:/images/113.png"
+            scale: forecast.scaleFactor
+        }
+        Text {
+            id: txtCondition
+            anchors.top: imgWeather.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
+            color: "#ffffff"
+            font.bold: true
+            font.pointSize: forecast.textSize
+            font.family: fontc059Bold.name
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            text: forecast.condition
+        }
+    }
+
+    Rectangle {
+        id: rectCenter
+        height: parent.height - dayOfWeek.height
+        width: 200
+        anchors.left: rectImage.right
+        anchors.top: dayOfWeek.bottom
+        color: "blue"
+
+        Column {
+            id: colRectCenter
+            anchors.horizontalCenter: rectCenter.horizontalCenter
+
+        }
+    }
+
+    Rectangle {
+        id: rectRight
+        height: parent.height - dayOfWeek.height
+        width: parent.width - rectImage.width - rectCenter.width
+        anchors.left: rectCenter.right
+        anchors.top: dayOfWeek.bottom
+        color: "yellow"
+    }
+
 
 //    Rectangle {
 //        id: rectDayOfWeek

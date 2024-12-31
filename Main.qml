@@ -152,7 +152,7 @@ Window {
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            color: "red"
+            color: "transparent"
 
             ItemWeatherSmall {
                 id: weather1
@@ -170,7 +170,7 @@ Window {
             anchors.top: parent.top
             anchors.left: lower_line_left.right
             anchors.verticalCenter: parent.verticalCenter
-            color: "blue"
+            color: "transparent"
 
             ItemWeatherSmall {
                 id: weather2
