@@ -176,7 +176,8 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 font.family: fontc059Bold.name
                 font.bold: true
-                font.pointSize: forecast.textSize+20
+                font.pointSize: forecast.textSize
+                wrapMode: Text.WordWrap
                 color: "white"
                 text: forecast.condition
             }

@@ -54,34 +54,98 @@ Rectangle {
     }
 
     Rectangle {
-        id: rectDayOfWeek
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        Text {
-            id: txtDayOfWeek
-            anchors.top: parent.top
-            color: "#FA9727"
-            font.bold: true
-            font.pointSize: 25
-            font.family: fontc059Bold.name
-            horizontalAlignment: Text.AlignHCenter
-            text: forecast.dayOfWeek
-        }
-    }
-
-    Rectangle {
-        id: recImgWeather
+        id: mainRectangle
+        width: parent.width
         height: parent.height
-        anchors.top: rectDayOfWeek.bottom
+        color: "transparent"
 
-        Image {
-            id: imgWeather
-            anchors.verticalCenter: recImgWeather.verticalCenter
-            source: "qrc:/images/113.png"
-            scale: forecast.scaleFactor
+        Rectangle {
+            id: dayOfWeek
+            width: parent.width
+            height: 25
+            color: "transparent"
+
+            Text {
+                id: txtDayOfWeek
+                width: parent.width
+                color: "#FA9727"
+                font.bold: true
+                font.pointSize: 25
+                font.family: fontc059Bold.name
+                horizontalAlignment: Text.AlignHCenter
+                text: forecast.dayOfWeek
+            }
         }
+
+        Rectangle {
+            id: rectLeft
+            color: "transparent"
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+
+            Image {
+                id: imgWeather
+                //anchors.verticalCenter: recImgWeather.verticalCenter
+                source: "qrc:/images/113.png"
+                scale: forecast.scaleFactor
+            }
+        }
+
+//TODO: center this text
+        Rectangle {
+            id: rectCenter
+            color: "transparent"
+            width: parent.width
+
+            Column {
+                id: colRectCenter
+                Text {
+                    id: txtCondition
+                    color: "#ffffff"
+                    font.bold: true
+                    font.pointSize: 13
+                    font.family: fontc059Bold.name
+                    text: forecast.condition
+                }
+            }
+        }
+
+        Rectangle {
+            id: rectRight
+            color: "transparent"
+        }
+
     }
 
+//    Rectangle {
+//        id: rectDayOfWeek
+//        anchors.horizontalCenter: parent.horizontalCenter
+//
+//        Text {
+//            id: txtDayOfWeek
+//            anchors.top: parent.top
+//            color: "#FA9727"
+//            font.bold: true
+//            font.pointSize: 25
+//            font.family: fontc059Bold.name
+//            horizontalAlignment: Text.AlignHCenter
+//            text: forecast.dayOfWeek
+//        }
+//    }
+//
+//    Rectangle {
+//        id: recImgWeather
+//        height: parent.height
+//        anchors.top: rectDayOfWeek.bottom
+//
+//        Image {
+//            id: imgWeather
+//            anchors.verticalCenter: recImgWeather.verticalCenter
+//            source: "qrc:/images/113.png"
+//            scale: forecast.scaleFactor
+//        }
+//    }
+//
 //    Rectangle {
 //        id: condition
 //        anchors.top: imgWeather.bottom
@@ -99,7 +163,7 @@ Rectangle {
 //            font.pointSize: 13
 //            font.family: fontc059Bold.name
 //            text: forecast.condition
-//        }
+////        }
 //        Rectangle {
 //            id: conditionAtTime
 //            anchors.top: txtCondition.bottom
