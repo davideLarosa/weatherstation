@@ -166,8 +166,8 @@ Rectangle {
                 font.bold: true
                 font.pointSize: forecast.textSize+20
                 color: "white"
-                text: forecast.tempCurr + forecast.unit
                 horizontalAlignment: Text.AlignHCenter
+                text: forecast.tempCurr + forecast.unit
             }
             Text {
                 id: txtCurrentCondition

@@ -86,7 +86,7 @@ Rectangle {
         Image {
             id: imgWeather
             anchors.top: parent.top
-            anchors.topMargin: 30
+            anchors.topMargin: 5
             //anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             source: "qrc:/images/113.png"
@@ -105,6 +105,20 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             text: forecast.condition
         }
+
+        Text {
+            id: txtCurrTemp
+            anchors.top: txtCondition.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
+            color: "#ffffff"
+            font.bold: true
+            font.pointSize: forecast.textSize - 5
+            font.family: fontc059Bold.name
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            text: forecast.conditionAtTime + forecast.unit
+        }
     }
 
     Rectangle {
@@ -118,34 +132,55 @@ Rectangle {
         Column {
             id: colTempMinAvgMax
             anchors.top: parent.top
-            anchors.right: parent.right
+            anchors.left: parent.left
             anchors.leftMargin: 10
             anchors.verticalCenter: parent.verticalCenter
 
-            Text {
-                id: txtTempMin
-                font.family: fontc059Bold.name
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "#3ecdfd"
-                text: forecast.tempMin + forecast.unit + "  "
+            Row {
+                id: rowTempMin
+                Text {
+                    id: txtTempMin
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize
+                    color: "#3ecdfd"
+                    text: forecast.tempMin + forecast.unit + "  "
+                }
             }
-            Text {
-                id: txtTempAvg
-                font.family: fontc059Bold.name
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "#ffffff"
-                text: forecast.tempAvg + forecast.unit + "  "
+            Row {
+                id: rowTempAvg
+                Text {
+                    id: txtTempAvg
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize
+                    color: "#ffffff"
+                    text: forecast.tempAvg + forecast.unit + "  "
+                }
             }
 
-            Text {
-                id: txtTempMax
-                font.family: fontc059Bold.name
-                font.bold: true
-                font.pointSize: forecast.textSize
-                color: "#fb5255"
-                text: forecast.tempMax + forecast.unit
+            Row {
+                id: rowTempMax
+                Text {
+                    id: txtTempMax
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize
+                    color: "#fb5255"
+                    text: forecast.tempMax + forecast.unit
+                }
+            }
+
+            Row {
+                id: rowRainPercent
+                Text {
+                    id: txtRainPercent
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize
+                    color: "white"
+                    text: forecast.rainPercent + "%  "
+                }
             }
         }
     }
@@ -154,25 +189,21 @@ Rectangle {
         id: rectRight
         height: parent.height - dayOfWeek.height
         width: parent.width - rectImage.width - rectCenter.width
-        anchors.leftMargin: 15
+        //anchors.leftMargin: 15
         anchors.left: rectCenter.right
         anchors.top: dayOfWeek.bottom
         color: "transparent"
         
         Column {
             id: colRectRight
-            anchors.left: parent.left
 
             Row {
                 id: rowHumidity
-                anchors.top: parent.top
-                anchors.left: parent.left
-
                 Text {
                     id: txtHumidity
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 10
+                    font.pointSize: forecast.textSize - 7
                     color: "white"
                     text: forecast.humidity + "%"
                 }
@@ -180,23 +211,11 @@ Rectangle {
 
             Row {
                 id: rowRain
-                anchors.top: rowHumidity.bottom
-                anchors.left: parent.left
-
-                Text {
-                    id: txtRainPercent
-                    font.family: fontc059Bold.name
-                    font.bold: true
-                    font.pointSize: forecast.textSize - 10
-                    color: "white"
-                    text: forecast.rainPercent + "%  "
-                }
-
                 Text {
                     id: txtRainMm
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 10
+                    font.pointSize: forecast.textSize - 7
                     color: "white"
                     text: forecast.rainMm + "mm"
                 }
@@ -204,14 +223,11 @@ Rectangle {
 
             Row {
                 id: rowWind
-                anchors.top: rowRain.bottom
-                anchors.left: parent.left
-
                 Text {
                     id: txtWindPecent
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 10
+                    font.pointSize: forecast.textSize - 7
                     color: "white"
                     text: forecast.windPercent + "%  "
                 }
@@ -219,7 +235,7 @@ Rectangle {
                     id: txtWindKmH
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 10
+                    font.pointSize: forecast.textSize - 7
                     color: "white"
                     text: forecast.windKmH + "km/h"
                 }
