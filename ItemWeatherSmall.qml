@@ -1,7 +1,7 @@
 import QtQuick
 
 Rectangle {
-    id: forecast
+    id: forecastSmallSmall
     property string dayOfWeek: " "
     property string feelsLike: "-"
     property string unit: " °C"
@@ -10,7 +10,7 @@ Rectangle {
     property string tempMax: "Max: --.-"
     property string tempAvg: "Avg: --.-"
     property string rainPercent: "Rain: -"
-    property string rainMm: "-"
+    property string rainMm: "Rain: -"
     property string windPercent: "Wind: -"
     property string windKmH: "-"
     property string humidity: "Humidity: -"
@@ -68,10 +68,10 @@ Rectangle {
             width: parent.width
             color: "#FA9727"
             font.bold: true
-            font.pointSize: forecast.textSize
+            font.pointSize: forecastSmallSmall.textSize
             font.family: fontc059Bold.name
             horizontalAlignment: Text.AlignHCenter
-            text: forecast.dayOfWeek
+            text: forecastSmallSmall.dayOfWeek
         }
     }
 
@@ -90,7 +90,7 @@ Rectangle {
             //anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             source: "qrc:/images/113.png"
-            scale: forecast.scaleFactor
+            scale: forecastSmallSmall.scaleFactor
         }
         Text {
             id: txtCondition
@@ -99,11 +99,11 @@ Rectangle {
             width: parent.width
             color: "#ffffff"
             font.bold: true
-            font.pointSize: forecast.textSize
+            font.pointSize: forecastSmallSmall.textSize
             font.family: fontc059Bold.name
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            text: forecast.condition
+            text: forecastSmallSmall.condition
         }
 
         Text {
@@ -113,11 +113,11 @@ Rectangle {
             width: parent.width
             color: "#ffffff"
             font.bold: true
-            font.pointSize: forecast.textSize - 5
+            font.pointSize: forecastSmallSmall.textSize - 5
             font.family: fontc059Bold.name
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
-            text: forecast.conditionAtTime + forecast.unit
+            text: forecastSmallSmall.conditionAtTime + forecastSmallSmall.unit
         }
     }
 
@@ -142,9 +142,9 @@ Rectangle {
                     id: txtTempMin
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize
+                    font.pointSize: forecastSmallSmall.textSize
                     color: "#3ecdfd"
-                    text: forecast.tempMin + forecast.unit + "  "
+                    text: forecastSmallSmall.tempMin + forecastSmallSmall.unit + "  "
                 }
             }
             Row {
@@ -153,9 +153,9 @@ Rectangle {
                     id: txtTempAvg
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize
+                    font.pointSize: forecastSmallSmall.textSize
                     color: "#ffffff"
-                    text: forecast.tempAvg + forecast.unit + "  "
+                    text: forecastSmallSmall.tempAvg + forecastSmallSmall.unit + "  "
                 }
             }
 
@@ -165,9 +165,9 @@ Rectangle {
                     id: txtTempMax
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize
+                    font.pointSize: forecastSmallSmall.textSize
                     color: "#fb5255"
-                    text: forecast.tempMax + forecast.unit
+                    text: forecastSmallSmall.tempMax + forecastSmallSmall.unit
                 }
             }
 
@@ -177,9 +177,9 @@ Rectangle {
                     id: txtRainPercent
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize
+                    font.pointSize: forecastSmallSmall.textSize
                     color: "white"
-                    text: forecast.rainPercent + "%  "
+                    text: forecastSmallSmall.rainPercent + "%  "
                 }
             }
         }
@@ -203,9 +203,9 @@ Rectangle {
                     id: txtHumidity
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 7
+                    font.pointSize: forecastSmallSmall.textSize - 7
                     color: "white"
-                    text: forecast.humidity + "%"
+                    text: forecastSmallSmall.humidity + "%"
                 }
             }
 
@@ -215,9 +215,9 @@ Rectangle {
                     id: txtRainMm
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 7
+                    font.pointSize: forecastSmallSmall.textSize - 7
                     color: "white"
-                    text: forecast.rainMm + "mm"
+                    text: forecastSmallSmall.rainMm + "mm"
                 }
             }
 
@@ -227,17 +227,17 @@ Rectangle {
                     id: txtWindPecent
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 7
+                    font.pointSize: forecastSmallSmall.textSize - 7
                     color: "white"
-                    text: forecast.windPercent + "%  "
+                    text: forecastSmallSmall.windPercent + "%  "
                 }
                 Text {
                     id: txtWindKmH
                     font.family: fontc059Bold.name
                     font.bold: true
-                    font.pointSize: forecast.textSize - 7
+                    font.pointSize: forecastSmallSmall.textSize - 7
                     color: "white"
-                    text: forecast.windKmH + "km/h"
+                    text: forecastSmallSmall.windKmH + "km/h"
                 }
             }
         }
@@ -256,7 +256,7 @@ Rectangle {
 //            font.pointSize: 25
 //            font.family: fontc059Bold.name
 //            horizontalAlignment: Text.AlignHCenter
-//            text: forecast.dayOfWeek
+//            text: forecastSmallSmall.dayOfWeek
 //        }
 //    }
 //
@@ -269,7 +269,7 @@ Rectangle {
 //            id: imgWeather
 //            anchors.verticalCenter: recImgWeather.verticalCenter
 //            source: "qrc:/images/113.png"
-//            scale: forecast.scaleFactor
+//            scale: forecastSmallSmall.scaleFactor
 //        }
 //    }
 //
@@ -289,7 +289,7 @@ Rectangle {
 //            font.bold: true
 //            font.pointSize: 13
 //            font.family: fontc059Bold.name
-//            text: forecast.condition
+//            text: forecastSmallSmall.condition
 ////        }
 //        Rectangle {
 //            id: conditionAtTime
@@ -305,7 +305,7 @@ Rectangle {
 //                font.bold: true
 //                font.pointSize: 13
 //                font.family: fontc059Bold.name
-//                text: forecast.conditionAtTime + forecast.unit
+//                text: forecastSmallSmall.conditionAtTime + forecastSmallSmall.unit
 //            }
 //        }
 //    }
@@ -314,7 +314,7 @@ Rectangle {
 //        height: parent.height
 //        width: parent.width
 //        anchors.top: parent.top
-//        anchors.topMargin: 10 * forecast.scaleFactor
+//        anchors.topMargin: 10 * forecastSmallSmall.scaleFactor
 //        anchors.horizontalCenter: parent.horizontalCenter
 //        color: "transparent"
 //
@@ -335,7 +335,7 @@ Rectangle {
 //                font.bold: true
 //                font.pointSize: 13
 //                font.family: fontc059Bold.name
-//                text: forecast.tempAvg + forecast.unit
+//                text: forecastSmallSmall.tempAvg + forecastSmallSmall.unit
 //            }
 //            Text {
 //                id: txtTempMin
@@ -346,7 +346,7 @@ Rectangle {
 //                font.bold: true
 //                font.pointSize: 13
 //                font.family: fontc059Bold.name
-//                text: forecast.tempMin + forecast.unit
+//                text: forecastSmallSmall.tempMin + forecastSmallSmall.unit
 //            }
 //            Text {
 //                id: txtTempMax
@@ -357,7 +357,7 @@ Rectangle {
 //                font.bold: true
 //                font.pointSize: 13
 //                font.family: fontc059Bold.name
-//                text: forecast.tempMax + forecast.unit
+//                text: forecastSmallSmall.tempMax + forecastSmallSmall.unit
 //            }
 //            Text {
 //                id: txtRain
@@ -368,7 +368,7 @@ Rectangle {
 //                font.bold: true
 //                font.pointSize: 13
 //                font.family: fontc059Bold.name
-//                text: forecast.rain + "%"
+//                text: forecastSmallSmall.rain + "%"
 //            }
 //            Text {
 //                id: txtHumidity
@@ -379,7 +379,7 @@ Rectangle {
 //                font.bold: true
 //                font.pointSize: 13
 //                font.family: fontc059Bold.name
-//                text: forecast.humidity + "%"
+//                text: forecastSmallSmall.humidity + "%"
 //            }
 //        }
 //    }
@@ -392,6 +392,6 @@ Rectangle {
 //        anchors.right: parent.right
 //        border.width: 1
 //        border.color: "white"
-//        visible: forecast.lineVisible
+//        visible: forecastSmallSmall.lineVisible
 //    }
 }
