@@ -52,28 +52,36 @@ Rectangle {
         }
         return code;
     }
-//
-//    Text {
-//        id: txtDayOfWeek
-//        anchors.horizontalCenter: imgWeather.horizontalCenter
-//        anchors.horizontalCenterOffset: 10
-//        anchors.bottom: imgWeather.top
-//        anchors.bottomMargin: 10
-//        color: "#FA9727"
-//        font.bold: true
-//        font.pointSize: 15
-//        font.family: fontc059Bold.name
-//        text: forecast.dayOfWeek
-//    }
-//    Image {
-//        id: imgWeather
-//        anchors.left: parent.left
-//        anchors.verticalCenter: parent.verticalCenter
-//        anchors.leftMargin: 15
-//        source: "qrc:/images/113.png"
-//        scale: forecast.scaleFactor
-//    }
-//
+
+    Rectangle {
+        id: rectDayOfWeek
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        Text {
+            id: txtDayOfWeek
+            anchors.top: parent.top
+            color: "#FA9727"
+            font.bold: true
+            font.pointSize: 25
+            font.family: fontc059Bold.name
+            horizontalAlignment: Text.AlignHCenter
+            text: forecast.dayOfWeek
+        }
+    }
+
+    Rectangle {
+        id: recImgWeather
+        height: parent.height
+        anchors.top: rectDayOfWeek.bottom
+
+        Image {
+            id: imgWeather
+            anchors.verticalCenter: recImgWeather.verticalCenter
+            source: "qrc:/images/113.png"
+            scale: forecast.scaleFactor
+        }
+    }
+
 //    Rectangle {
 //        id: condition
 //        anchors.top: imgWeather.bottom

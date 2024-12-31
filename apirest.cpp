@@ -28,15 +28,7 @@ void ApiRest::restApiRequest() {
 }
 
 void ApiRest::onRestApiFinished(QNetworkReply *reply) {
-    QJsonDocument jsdoc=QJsonDocument::fromJson(reply->readAll());
-    setJsonData(jsdoc.object());
-    QByteArray docByteArray = jsdoc.toJson(QJsonDocument::Compact);
-
-    QDateTime dateAndTime = QDateTime::currentDateTime();
-
-
-    QString logString = "Api request run at " + QDateTime::currentDateTime().time().toString() + " on " + QDateTime::currentDateTime().date().toString();
-    qDebug() << logString;
+    QString logString = "App is running";
 
     QString filename = "/tmp/weatherStation.log";
     QFile file(filename);
@@ -47,5 +39,43 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
     } else {
         qDebug() << "Cannot open destination log fine";
     }
+
+    QVariant statusCode = reply->attribute( QNetworkRequest::HttpStatusCodeAttribute );
+    int status = statusCode.toInt();
+    logString = "Curl response code " + reply->attribute( QNetworkRequest::HttpReasonPhraseAttribute ).toString();
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream stream(&file);
+        stream << logString << Qt::endl;
+        file.close();
+    } else {
+        qDebug() << "Cannot open destination log fine";
+    }
+    qDebug() << logString;
+
+    QJsonDocument jsdoc=QJsonDocument::fromJson(reply->readAll());
+    setJsonData(jsdoc.object());
+    QByteArray docByteArray = jsdoc.toJson(QJsonDocument::Compact);
+
+    QDateTime dateAndTime = QDateTime::currentDateTime();
+
+    logString = "Api request run at " + QDateTime::currentDateTime().time().toString() + " on " + QDateTime::currentDateTime().date().toString();
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream stream(&file);
+        stream << logString << Qt::endl;
+        file.close();
+    } else {
+        qDebug() << "Cannot open destination log fine";
+    }
+
+    logString = "Request output is: \n" + QString(docByteArray);
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream stream(&file);
+        stream << logString << Qt::endl;
+        file.close();
+    } else {
+        qDebug() << "Cannot open destination log fine";
+    }
+    qDebug() << logString;
+
 }
 

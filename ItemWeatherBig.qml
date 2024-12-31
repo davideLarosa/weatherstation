@@ -10,10 +10,10 @@ Rectangle {
     property string tempMax: "H: --.-"
     property string tempAvg: "A: --.-"
     property string rainPercent: "Rain: -"
-    property string rainMm: "- %"
+    property string rainMm: "-"
     property string humidity: "Humidity: -"
-    property string windPercent: "- %"
-    property string windKmH: "- km/h"
+    property string windPercent: "-"
+    property string windKmH: "-"
     property string condition: "-"
     property real scaleFactor: 1.0
     property real textSize: 20
@@ -83,7 +83,7 @@ Rectangle {
             id: rowRain
             anchors.top: rowHumidity.bottom
             anchors.left: parent.left
-    
+
             Text {
                 id: txtRainPercent
                 font.family: fontc059Bold.name

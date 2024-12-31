@@ -138,63 +138,51 @@ Window {
         visible: true
     }
 
-   Rectangle {
+    Rectangle {
         id: rectAdditionaWeather
         width: parent.width
         height: 220
-        anchors.top: rectWeather0.bottom
+        anchors.top: recAddWhorizontalLine.bottom
         color: "transparent"
 
-    //     // Additions
-    //     Rectangle {
-    //         id: lower_line
-    //         height: parent.height/4
-    //         width: parent.width
-    //         anchors.horizontalCenter: parent.horizontalCenter
-    //         anchors.bottom: parent.bottom
-    //         color: "transparent"
+        Rectangle {
+            id: lower_line_left
+            height: parent.height
+            width: parent.width/2
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+            color: "red"
 
-             Rectangle {
-                 id: lower_line_left
-                 anchors.verticalCenter: parent.verticalCenter
-                 anchors.bottom: parent.bottom
-                 anchors.left: parent.left
-                 height: parent.height
-                 width: parent.width/2
-                 color: "transparent"
-
-                 ItemWeatherSmall {
-                     id: weather1
-                     width: parent.width
-                     height: parent.height
-                     anchors.verticalCenter: parent.verticalCenter
-                     anchors.left: parent.left
-                     dayOfWeek: qsTr("--")
-                     lineVisible: false
-                 }
-             }
-
-            Rectangle {
-                id: lower_line_right
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.bottom: parent.bottom
-                anchors.left: lower_line_left.right
+            ItemWeatherSmall {
+                id: weather1
+                width: parent.width
                 height: parent.height
-                width: parent.width/2
-                color: "transparent"
-
-
-                ItemWeatherSmall {
-                    id: weather2
-                    width: parent.width
-                    height: parent.height
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    dayOfWeek: qsTr("--")
-                    lineVisible: false
-                }
+                dayOfWeek: qsTr("--")
+                scaleFactor: 2
             }
         }
+
+        Rectangle {
+            id: lower_line_right
+            height: parent.height
+            width: parent.width/2
+            anchors.top: parent.top
+            anchors.left: lower_line_left.right
+            anchors.verticalCenter: parent.verticalCenter
+            color: "blue"
+
+            ItemWeatherSmall {
+                id: weather2
+                width: parent.width
+                height: parent.height
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left: parent.left
+                dayOfWeek: qsTr("--")
+                scaleFactor: 2
+            }
+        }
+    }
  //   }
     // the invisible button
  //   Rectangle {
