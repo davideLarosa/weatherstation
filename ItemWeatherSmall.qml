@@ -9,8 +9,11 @@ Rectangle {
     property string tempMin: "Min: --.-"
     property string tempMax: "Max: --.-"
     property string tempAvg: "Avg: --.-"
-    property string rain: "Rain: -"
-    property string humidity: "H: -"
+    property string rainPercent: "Rain: -"
+    property string rainMm: "-"
+    property string windPercent: "Wind: -"
+    property string windKmH: "-"
+    property string humidity: "Humidity: -"
     property string condition: "-"
     property string conditionAtTime: "-"
     property bool lineVisible: true
@@ -110,12 +113,40 @@ Rectangle {
         width: 200
         anchors.left: rectImage.right
         anchors.top: dayOfWeek.bottom
-        color: "blue"
+        color: "transparent"
 
         Column {
-            id: colRectCenter
-            anchors.horizontalCenter: rectCenter.horizontalCenter
+            id: colTempMinAvgMax
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
 
+            Text {
+                id: txtTempMin
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "#3ecdfd"
+                text: forecast.tempMin + forecast.unit + "  "
+            }
+            Text {
+                id: txtTempAvg
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "#ffffff"
+                text: forecast.tempAvg + forecast.unit + "  "
+            }
+
+            Text {
+                id: txtTempMax
+                font.family: fontc059Bold.name
+                font.bold: true
+                font.pointSize: forecast.textSize
+                color: "#fb5255"
+                text: forecast.tempMax + forecast.unit
+            }
         }
     }
 
@@ -123,9 +154,77 @@ Rectangle {
         id: rectRight
         height: parent.height - dayOfWeek.height
         width: parent.width - rectImage.width - rectCenter.width
+        anchors.leftMargin: 15
         anchors.left: rectCenter.right
         anchors.top: dayOfWeek.bottom
-        color: "yellow"
+        color: "transparent"
+        
+        Column {
+            id: colRectRight
+            anchors.left: parent.left
+
+            Row {
+                id: rowHumidity
+                anchors.top: parent.top
+                anchors.left: parent.left
+
+                Text {
+                    id: txtHumidity
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize - 10
+                    color: "white"
+                    text: forecast.humidity + "%"
+                }
+            }
+
+            Row {
+                id: rowRain
+                anchors.top: rowHumidity.bottom
+                anchors.left: parent.left
+
+                Text {
+                    id: txtRainPercent
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize - 10
+                    color: "white"
+                    text: forecast.rainPercent + "%  "
+                }
+
+                Text {
+                    id: txtRainMm
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize - 10
+                    color: "white"
+                    text: forecast.rainMm + "mm"
+                }
+            }
+
+            Row {
+                id: rowWind
+                anchors.top: rowRain.bottom
+                anchors.left: parent.left
+
+                Text {
+                    id: txtWindPecent
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize - 10
+                    color: "white"
+                    text: forecast.windPercent + "%  "
+                }
+                Text {
+                    id: txtWindKmH
+                    font.family: fontc059Bold.name
+                    font.bold: true
+                    font.pointSize: forecast.textSize - 10
+                    color: "white"
+                    text: forecast.windKmH + "km/h"
+                }
+            }
+        }
     }
 
 
