@@ -1,6 +1,8 @@
 import QtQuick
 
 Window {
+    property real selector: 0
+
     id: mainWindow
     width: 1024
     height: 600
@@ -43,6 +45,24 @@ Window {
         onTriggered: {
             time.text = Qt.formatDateTime(new Date(), "hh:mm:ss")
             date.text = Qt.formatDateTime(new Date(), "dddd dd MMMM")
+        }
+    }
+
+    Timer {
+        id: weatherChanger
+        interval: 10000
+        running: true
+        repeat: true
+        onTriggered: {
+            if (selector === 0) {
+                selector = 1;
+                weather1.visible = false
+                weather2.visible = true
+            } else {
+                selector = 0
+                weather1.visible = true
+                weather2.visible = false
+            }
         }
     }
 
@@ -145,34 +165,40 @@ Window {
         anchors.top: recAddWhorizontalLine.bottom
         color: "transparent"
 
-        Rectangle {
-            id: lower_line_left
-            height: parent.height
-            width: parent.width/2
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            color: "transparent"
+        //Rectangle {
+        //    id: lower_line_left
+        //    height: parent.height
+        //    width: parent.width/2
+        //    anchors.top: parent.top
+        //    anchors.left: parent.left
+        //    anchors.verticalCenter: parent.verticalCenter
+        //    color: "transparent"
 
-            ItemWeatherSmall {
+        //    //Loader {
+        //    //    id: lowerLeftRect
+        //    //    anchors.fill: parent
+        //    //    source: "ItemWeatherSmall.qml"
+        //    //}
+            ItemWeatherBig {
                 id: weather1
                 width: parent.width
                 height: parent.height
                 dayOfWeek: qsTr("--")
                 scaleFactor: 2
+                visible: true
             }
-        }
+        //}
 
-        Rectangle {
-            id: lower_line_right
-            height: parent.height
-            width: parent.width/2
-            anchors.top: parent.top
-            anchors.left: lower_line_left.right
-            anchors.verticalCenter: parent.verticalCenter
-            color: "transparent"
+        //Rectangle {
+        //    id: lower_line_right
+        //    height: parent.height
+        //    width: parent.width/2
+        //    anchors.top: parent.top
+        //    anchors.left: lower_line_left.right
+        //    anchors.verticalCenter: parent.verticalCenter
+        //    color: "transparent"
 
-            ItemWeatherSmall {
+            ItemWeatherBig {
                 id: weather2
                 width: parent.width
                 height: parent.height
@@ -180,8 +206,9 @@ Window {
                 anchors.left: parent.left
                 dayOfWeek: qsTr("--")
                 scaleFactor: 2
+                visible: false
             }
-        }
+        //}
     }
  //   }
     // the invisible button
