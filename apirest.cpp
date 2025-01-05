@@ -48,9 +48,9 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
         stream << logString << Qt::endl;
         file.close();
     } else {
-        qDebug() << "Cannot open destination log fine";
+//        qDebug() << "Cannot open destination log fine";
     }
-    qDebug() << logString;
+//    qDebug() << logString;
 
     QJsonDocument jsdoc=QJsonDocument::fromJson(reply->readAll());
     setJsonData(jsdoc.object());
@@ -75,7 +75,7 @@ void ApiRest::onRestApiFinished(QNetworkReply *reply) {
     } else {
         qDebug() << "Cannot open destination log fine";
     }
-    qDebug() << logString;
+//    qDebug() << logString;
 
 }
 

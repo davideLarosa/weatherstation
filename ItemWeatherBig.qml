@@ -18,8 +18,8 @@ Rectangle {
     property real scaleFactor: 1.0
     property real textSize: 20
 
-    property string dayOfWeek: "-"
-    property string conditionAtTime: "-" 
+    property string sunrise: ""
+    property string sunset: ""
 
     color: "transparent"
 
