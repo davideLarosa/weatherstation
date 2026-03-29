@@ -18,7 +18,7 @@ Rectangle {
     property string conditionAtTime: "-"
     property bool lineVisible: true
     property real scaleFactor: 1.0
-    property real textSize: 20
+    property real textSize: 22
 
     color: "transparent"
 
